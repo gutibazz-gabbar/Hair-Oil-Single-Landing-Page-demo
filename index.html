@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bonoja — Cold-Pressed Organic Hair Oil</title>
+<meta name="description" content="Cold-pressed organic hair oil made with coconut, amla, bhringraj, neem and black seed from verified Bangladeshi farms.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf6ee;--card:#fff;--ink:#1f2a1f;--mute:#5d685d;--green:#2f5d3a;--leaf:#6f9b57;--gold:#c9923a;--line:#e6dfcf;--r:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;font-weight:600}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+section{padding:84px 0}
+.eyebrow{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--leaf);font-weight:600;margin-bottom:10px}
+h2{font-size:clamp(1.9rem,4vw,2.7rem);margin-bottom:14px}
+.lead{color:var(--mute);max-width:620px;margin-bottom:44px}
+.btn{display:inline-block;border:0;cursor:pointer;font:600 .95rem Inter;padding:14px 26px;border-radius:99px;background:var(--green);color:#fff;transition:.2s}
+.btn:hover{background:#244a2d;transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--green);border:1.5px solid var(--green)}
+.btn.ghost:hover{background:var(--green);color:#fff}
+.grid{display:grid;gap:22px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(250,246,238,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{font:700 1.5rem Fraunces;color:var(--green)}
+.logo span{color:var(--gold)}
+.links{display:flex;gap:26px;font-size:.9rem;color:var(--mute)}
+.links a:hover{color:var(--green)}
+.cartbtn{position:relative;background:none;border:1.5px solid var(--green);color:var(--green);border-radius:99px;padding:8px 18px;font:600 .88rem Inter;cursor:pointer}
+.cartbtn b{background:var(--gold);color:#fff;border-radius:99px;padding:1px 8px;margin-left:6px;font-size:.78rem}
+@media(max-width:780px){.links{display:none}}
+/* hero */
+.hero{padding:60px 0 80px;background:radial-gradient(900px 500px at 85% 20%,#e9f0d9,transparent 70%)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(2.4rem,6vw,4.1rem);margin-bottom:18px}
+.hero h1 em{color:var(--green);font-style:italic}
+.hero p.sub{color:var(--mute);font-size:1.08rem;max-width:520px;margin-bottom:26px}
+.why{list-style:none;display:grid;gap:10px;margin-bottom:30px}
+.why li{display:flex;gap:10px;font-size:.95rem}
+.why li:before{content:"✓";color:#fff;background:var(--leaf);border-radius:50%;width:22px;height:22px;flex:none;display:grid;place-items:center;font-size:.75rem;margin-top:2px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.price-tag{font-size:.9rem;color:var(--mute)}
+.price-tag b{font:700 1.5rem Fraunces;color:var(--green)}
+.price-tag s{margin:0 4px}
+.stage{position:relative;aspect-ratio:1/1.05;border-radius:34px;background:linear-gradient(160deg,#dfe9c9,#f4ead2);display:grid;place-items:center;overflow:hidden;border:1px solid var(--line)}
+.stage video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none}
+.stage.hasvideo video{display:block}
+.stage svg{width:78%;animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-14px)}}
+.drop{animation:drip 3s ease-in infinite}
+@keyframes drip{0%{transform:translateY(-6px);opacity:0}30%{opacity:1}100%{transform:translateY(34px);opacity:0}}
+.badge{position:absolute;background:#fff;border-radius:99px;padding:8px 16px;font-size:.8rem;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.b1{top:7%;left:6%}.b2{bottom:9%;right:6%}.b3{top:46%;right:4%}
+.trust{display:flex;gap:30px;flex-wrap:wrap;margin-top:34px;color:var(--mute);font-size:.85rem}
+.trust b{display:block;font:700 1.4rem Fraunces;color:var(--ink)}
+/* ingredients */
+.ing .ico{width:54px;height:54px;border-radius:16px;background:#eef3e1;display:grid;place-items:center;font-size:1.7rem;margin-bottom:14px}
+.ing h3{font-size:1.2rem;margin-bottom:4px}
+.loc{font-size:.82rem;color:var(--gold);font-weight:600;margin-bottom:8px}
+.ing p{font-size:.9rem;color:var(--mute)}
+.note{margin-top:22px;font-size:.82rem;color:var(--mute);background:#f3ecda;border-radius:12px;padding:12px 16px}
+/* process */
+.steps{counter-reset:s;display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.step{counter-increment:s;position:relative;padding-top:54px}
+.step:before{content:counter(s);position:absolute;top:0;left:0;width:40px;height:40px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font:600 1.1rem Fraunces}
+.step h3{font-size:1.1rem;margin-bottom:6px}
+.step p{font-size:.9rem;color:var(--mute)}
+.dark{background:var(--green);color:#fff}
+.dark .eyebrow{color:#cfe3b8}.dark .lead,.dark .step p{color:#d7e5cb}
+.dark .step:before{background:var(--gold)}
+/* lists */
+.checks{list-style:none;display:grid;gap:12px}
+.checks li{padding-left:30px;position:relative;font-size:.95rem}
+.checks li:before{content:"🌿";position:absolute;left:0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+@media(max-width:860px){.two{grid-template-columns:1fr}}
+.tag{display:inline-block;background:#eef3e1;color:var(--green);border-radius:99px;padding:8px 16px;margin:0 8px 10px 0;font-size:.9rem;font-weight:500}
+.tag.no{background:#f7e4df;color:#9a4a3a}
+/* compare */
+.tbl{overflow-x:auto;border-radius:var(--r);border:1px solid var(--line);background:#fff}
+table{width:100%;border-collapse:collapse;min-width:620px;font-size:.92rem}
+th,td{padding:16px 20px;text-align:left;border-bottom:1px solid var(--line)}
+th{font:600 1rem Fraunces}
+td:nth-child(2),th:nth-child(2){background:#f0f5e4}
+td:nth-child(2){font-weight:600;color:var(--green)}
+tr:last-child td{border-bottom:0}
+/* pricing */
+.plan{display:flex;flex-direction:column;position:relative}
+.plan.pop{border:2px solid var(--green);transform:translateY(-8px)}
+.ribbon{position:absolute;top:-13px;left:24px;background:var(--gold);color:#fff;font-size:.74rem;font-weight:600;padding:4px 14px;border-radius:99px}
+.plan h3{font-size:1.3rem}
+.size{color:var(--mute);font-size:.88rem;margin-bottom:14px}
+.pr{margin-bottom:6px}
+.pr b{font:700 2.2rem Fraunces;color:var(--green)}
+.pr s{color:var(--mute);margin-left:8px}
+.save{font-size:.82rem;color:var(--gold);font-weight:600;margin-bottom:18px}
+.plan ul{list-style:none;font-size:.9rem;color:var(--mute);margin-bottom:22px;display:grid;gap:6px}
+.plan .btn{margin-top:auto;text-align:center}
+.ship{margin-top:34px;display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.ship .card{padding:20px;font-size:.9rem}
+.ship h4{font:600 1.05rem Fraunces;margin-bottom:6px}
+.ship .big{font:700 1.5rem Fraunces;color:var(--green)}
+.free{background:var(--green);color:#fff}
+.free .big{color:#fff}
+/* verify */
+.vs{display:grid;gap:16px}
+.v{display:flex;gap:16px}
+.v i{flex:none;width:38px;height:38px;border-radius:12px;background:#eef3e1;display:grid;place-items:center;font-style:normal}
+.v h4{font-size:1rem;margin-bottom:2px}
+.v p{font-size:.88rem;color:var(--mute)}
+/* reviews */
+.stars{color:var(--gold);letter-spacing:2px}
+.rev p{font-size:.93rem;margin:8px 0 12px}
+.rev small{color:var(--mute)}
+form.rf{display:grid;gap:12px;margin-top:40px;max-width:560px}
+input,textarea,select{font:inherit;padding:13px 16px;border:1px solid var(--line);border-radius:14px;background:#fff;width:100%}
+input:focus,textarea:focus{outline:2px solid var(--leaf)}
+.rate{display:flex;gap:4px;direction:rtl;justify-content:flex-end;width:max-content}
+.rate input{display:none}
+.rate label{font-size:1.8rem;color:#d9d2bf;cursor:pointer}
+.rate input:checked~label,.rate label:hover,.rate label:hover~label{color:var(--gold)}
+/* faq */
+details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 22px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between}
+summary:after{content:"+";color:var(--green);font-size:1.3rem;line-height:1}
+details[open] summary:after{content:"–"}
+details p{margin-top:10px;color:var(--mute);font-size:.93rem}
+/* final */
+.final{text-align:center;background:linear-gradient(160deg,#e9f0d9,#f4ead2)}
+.final h2{max-width:640px;margin:0 auto 14px}
+footer{padding:30px 0;text-align:center;color:var(--mute);font-size:.85rem;border-top:1px solid var(--line)}
+/* drawer */
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:.25s;z-index:40}
+.ov.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(420px,100%);background:var(--bg);z-index:50;transform:translateX(100%);transition:.3s;display:flex;flex-direction:column}
+.drawer.on{transform:none}
+.dh{padding:20px 24px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.dh button{background:none;border:0;font-size:1.6rem;cursor:pointer}
+.db{flex:1;overflow:auto;padding:20px 24px}
+.item{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+.q{display:flex;align-items:center;gap:8px;margin-top:6px}
+.q button{width:26px;height:26px;border-radius:50%;border:1px solid var(--line);background:#fff;cursor:pointer}
+.df{padding:18px 24px;border-top:1px solid var(--line);display:grid;gap:10px;font-size:.9rem}
+.row{display:flex;justify-content:space-between}
+.row.t{font:700 1.15rem Fraunces}
+.hint{font-size:.8rem;color:var(--gold)}
+.opts{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}
+.opts label{border:1px solid var(--line);background:#fff;border-radius:12px;padding:8px 6px;font-size:.76rem;text-align:center;cursor:pointer}
+.opts input{display:none}
+.opts input:checked+span{color:var(--green);font-weight:700}
+.opts label:has(input:checked){border-color:var(--green);background:#eef3e1}
+.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,120px);background:var(--ink);color:#fff;padding:12px 22px;border-radius:99px;font-size:.9rem;z-index:60;transition:.3s}
+.toast.on{transform:translate(-50%,0)}
+
+section{padding:96px 0}
+nav{box-shadow:0 1px 0 var(--line)}
+.ann{background:#1f2a1f;color:#e9efe0;text-align:center;font-size:.8rem;padding:9px 16px;letter-spacing:.02em}
+.nr{display:flex;gap:10px;align-items:center}
+.nr select{width:auto;padding:7px 10px;border-radius:99px;font-size:.82rem}
+.tb{background:#fff;border-bottom:1px solid var(--line)}
+.tb .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;padding-top:22px;padding-bottom:22px}
+.tb .wrap>div{display:flex;gap:10px;align-items:center;justify-content:center;font-size:.84rem;font-weight:500;text-align:center}
+.tabs{position:absolute;left:16px;bottom:16px;z-index:3;display:flex;background:#fff;border-radius:99px;padding:4px;box-shadow:0 6px 20px rgba(0,0,0,.08)}
+.tabs button{border:0;background:none;padding:7px 16px;border-radius:99px;font:600 .8rem Inter;cursor:pointer;color:var(--mute)}
+.tabs button.on{background:var(--green);color:#fff}
+.spec{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.spec span{background:#fff;border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.78rem;color:var(--mute)}
+.spec b{color:var(--ink)}
+.wl{display:inline-block;margin-top:12px;font-size:.84rem;font-weight:600;color:var(--green);border-bottom:1.5px solid var(--gold)}
+.wl:hover{color:var(--gold)}
+.mo{position:fixed;inset:0;background:rgba(20,28,20,.55);z-index:70;display:grid;place-items:center;padding:20px;opacity:0;pointer-events:none;transition:.25s}
+.mo.on{opacity:1;pointer-events:auto}
+.mbox{position:relative;background:var(--bg);border-radius:24px;padding:34px;max-width:520px;width:100%;max-height:88vh;overflow:auto}
+.mbox h3{font-size:1.6rem;margin-bottom:6px}
+.mbox h4{font:600 1rem Fraunces;margin:16px 0 4px;color:var(--green)}
+.mbox p{font-size:.92rem;color:var(--mute)}
+.mbox .fine{font-size:.76rem;margin-top:16px;background:#f3ecda;padding:10px 12px;border-radius:10px}
+.mbox .x{position:absolute;top:14px;right:18px;border:0;background:none;font-size:1.6rem;cursor:pointer}
+.mbox .btn{margin-top:20px}
+.okc{width:64px;height:64px;border-radius:50%;background:var(--leaf);color:#fff;display:grid;place-items:center;font-size:1.9rem;margin:0 auto 14px}
+.art svg,.combcard svg{width:100%;height:auto;display:block}
+.combcard{position:relative;background:#fff}
+.gift{position:absolute;top:16px;right:16px;background:var(--gold);color:#fff;font-size:.74rem;font-weight:600;padding:5px 14px;border-radius:99px}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+.plan.pop.rv.in{transform:translateY(-8px)}
+footer.ft{text-align:left;padding:64px 0 24px;background:#1f2a1f;color:#cfd8c6;border:0;font-size:.88rem}
+.fg{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:34px;margin-bottom:40px}
+@media(max-width:780px){.fg{grid-template-columns:1fr 1fr}}
+.ft h5{color:#fff;font:600 1rem Fraunces;margin-bottom:12px}
+.ft a{display:block;margin-bottom:8px;color:#cfd8c6}
+.ft a:hover{color:#fff}
+.ft .logo{color:#fff;margin-bottom:12px}
+.fb{border-top:1px solid #34423a;padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.8rem;color:#99a893}
+
+.links{gap:18px;font-size:.85rem}
+.df{max-height:62vh;overflow:auto}
+.btn.sm{padding:10px 18px;font-size:.85rem}
+.qz{max-width:720px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:34px}
+.qz h3{font-size:1.4rem;margin-bottom:18px}
+.qn{font-size:.8rem;color:var(--mute)}
+.qbar{height:6px;background:#eef3e1;border-radius:9px;overflow:hidden;margin:10px 0 24px}
+.qbar i{display:block;height:100%;background:var(--leaf);width:0;transition:.3s}
+.opt{display:block;width:100%;text-align:left;margin-bottom:10px;padding:15px 18px;border:1.5px solid var(--line);border-radius:14px;background:#fff;font:500 .95rem Inter;cursor:pointer;transition:.15s}
+.opt:hover{border-color:var(--green);background:#f0f5e4}
+.lnk{background:none;border:0;color:var(--mute);cursor:pointer;font:500 .85rem Inter;margin:6px 14px 0 0}
+.chips span{display:inline-block;background:#eef3e1;color:var(--green);border-radius:99px;padding:5px 12px;margin:0 6px 6px 0;font-size:.8rem}
+.chips span.hero{background:var(--gold);color:#fff}
+.fx{display:flex;flex-direction:column;transition:.25s}
+.fx h3{font-size:1.35rem;margin-bottom:4px}
+.fx .sub{font-size:.88rem;color:var(--mute);margin-bottom:14px}
+.fx .best{font-size:.86rem;margin:8px 0 18px;color:var(--mute)}
+.fx .btn{margin-top:auto;text-align:center}
+.fx.hl{border:2px solid var(--green);box-shadow:0 14px 40px rgba(47,93,58,.18)}
+.res .pr{margin:12px 0}
+.story{margin-bottom:76px;align-items:center}
+.story:last-of-type{margin-bottom:0}
+.fl{list-style:none;counter-reset:f;display:grid;gap:10px;margin-top:16px}
+.fl li{counter-increment:f;display:flex;gap:12px;font-size:.92rem}
+.fl li:before{content:counter(f);flex:none;width:26px;height:26px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-size:.78rem;font-weight:600}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:64px}
+.ph{position:relative;aspect-ratio:4/3;border-radius:18px;overflow:hidden;background:linear-gradient(135deg,#e5edd2,#f3ead2);display:grid;place-items:center;text-align:center;font-size:.76rem;color:var(--mute);padding:14px}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.ph figcaption{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(0,0,0,.65));color:#fff;font-size:.82rem;padding:24px 14px 10px;text-align:left;z-index:2}
+.ph .slot b{display:block;font-size:1.5rem;margin-bottom:2px}
+.pay{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.pay span{padding:7px 16px;border-radius:99px;font-weight:700;font-size:.82rem;color:#fff}
+.doc{display:flex;flex-direction:column;gap:6px}
+.doc .ic{font-size:2rem}
+.doc h3{font-size:1.15rem}
+.doc p{font-size:.88rem;color:var(--mute);margin-bottom:10px}
+.doc .btn{margin-top:auto;text-align:center}
+.smp{font-size:.7rem;font-weight:700;color:#9a4a3a;background:#f7e4df;border-radius:99px;padding:3px 10px;width:max-content}
+.lk{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.lk input{flex:1;min-width:200px}
+.bres{margin-top:14px;font-size:.92rem;padding:12px 16px;border-radius:12px}
+.bres.ok{background:#eef3e1;color:var(--green)}
+.bres.no{background:#f7e4df;color:#9a4a3a}
+.mapw{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);min-height:360px}
+.mapw iframe{border:0;width:100%;height:100%;min-height:360px;display:block}
+.hrs{width:100%;font-size:.9rem;margin:12px 0 18px;border-collapse:collapse}
+.hrs td{padding:6px 0;border-bottom:1px solid var(--line)}
+.hrs td+td{text-align:right;font-weight:600}
+</style>
+</head>
+<body>
+
+<div class="ann">Free delivery over <span class="m" data-v="1500">৳1,500</span> · Free refillable wooden oil comb with Family &amp; Bundle · 30-day money-back guarantee</div>
+<nav><div class="wrap">
+  <a href="#top" class="logo">Bonoja<span>.</span></a>
+  <div class="links"><a href="#quiz">Find your formula</a><a href="#ingredients">Ingredients</a><a href="#story">Our story</a><a href="#pricing">Pricing</a><a href="#proofs">Proofs</a><a href="#visit">Visit us</a><a href="#faq">FAQ</a></div>
+  <div class="nr"><select id="cur" onchange="setCur(this.value)" aria-label="Currency"><option>BDT</option><option>USD</option><option>EUR</option><option>GBP</option></select><button class="cartbtn" onclick="openCart()">Cart<b id="cc">0</b></button></div>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+  <div>
+    <div class="eyebrow">100% organic · cold-pressed · small batch</div>
+    <h1>Roots deserve <em>real</em> nourishment.</h1>
+    <p class="sub">Bonoja is a cold-pressed blend of coconut, amla, bhringraj, neem and black seed. Grown on verified farms, made in small batches, with no mineral oil, silicones or synthetic fragrance.</p>
+    <p style="font-weight:600;margin-bottom:10px">Why people choose Bonoja</p>
+    <ul class="why">
+      <li>Visible reduction in hair fall and breakage within 6–8 weeks of regular use</li>
+      <li>Every batch is numbered and traceable back to its farm</li>
+      <li>Light, non-sticky texture that washes out easily</li>
+    </ul>
+    <div class="cta">
+      <a href="#pricing" class="btn">Order now</a>
+      <button class="btn ghost" onclick="add('p250')">Add to cart</button>
+      <span class="price-tag"><b class="m" data-v="749">৳749</b> <s class="m" data-v="950">৳950</s> · 250 ml</span>
+    </div>
+    <div class="trust"><div><b>4.8★</b>from 1,200+ reviews</div><div><b>6</b>certified-organic ingredients</div><div><b>0</b>chemicals added</div></div>
+    <div class="spec"><span><b>Size</b> 250 ml</span><span><b>MFG</b> 10 Nov 2026</span><span><b>EXP</b> 09 Nov 2027</span><span><b>Batch</b> BN-2611-A</span></div>
+  </div>
+  <div class="stage" id="stage">
+    <!-- AI VIDEO: drop your generated clip at assets/hero.mp4 (and a poster). It will replace the animation automatically. -->
+    <video id="hv" autoplay muted loop playsinline poster="" ></video>
+    <span class="badge b1">🌿 Certified organic</span>
+    <span class="badge b2">💧 Cold-pressed</span>
+    <span class="badge b3">🐇 Cruelty-free</span>
+    <svg id="vf" viewBox="0 0 300 380" aria-label="Front of the Bonoja organic hair oil bottle">
+      <defs>
+        <linearGradient id="gl" x1="0" x2="1"><stop offset="0" stop-color="#3d7249"/><stop offset=".5" stop-color="#2f5d3a"/><stop offset="1" stop-color="#244a2d"/></linearGradient>
+        <linearGradient id="oil" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e3b457"/><stop offset="1" stop-color="#b57a22"/></linearGradient>
+      </defs>
+      <ellipse cx="150" cy="362" rx="95" ry="12" fill="#00000018"/>
+      <rect x="120" y="14" width="60" height="44" rx="10" fill="#c9923a"/>
+      <rect x="132" y="56" width="36" height="22" fill="#d9b06a"/>
+      <path d="M92 100q0-24 40-24h36q40 0 40 24v236q0 24-24 24H116q-24 0-24-24z" fill="url(#gl)"/>
+      <path d="M104 190h92v140q0 10-10 10h-72q-10 0-10-10z" fill="url(#oil)" opacity=".92"/>
+      <rect x="104" y="120" width="92" height="140" rx="12" fill="#faf6ee"/>
+      <text x="150" y="166" text-anchor="middle" font-family="Georgia,serif" font-size="25" font-weight="700" fill="#2f5d3a">Bonoja</text>
+      <text x="150" y="188" text-anchor="middle" font-family="Arial" font-size="9" letter-spacing="2" fill="#c9923a">ORGANIC HAIR OIL</text>
+      <g fill="#6f9b57"><path d="M150 206c-14 6-20 22-14 36 14-4 22-18 14-36z"/><path d="M150 206c14 6 20 22 14 36-14-4-22-18-14-36z" opacity=".7"/></g>
+      <text x="150" y="258" text-anchor="middle" font-family="Arial" font-size="9" fill="#5d685d">250 ml · cold-pressed</text>
+      <path class="drop" d="M150 80c-5 8-8 12-8 16a8 8 0 0016 0c0-4-3-8-8-16z" fill="#e3b457"/>
+    </svg>
+    <svg id="vb" viewBox="0 0 300 380" aria-label="Back of the Bonoja bottle with ingredients and dates" style="display:none">
+      <defs><linearGradient id="gl3" x1="0" x2="1"><stop offset="0" stop-color="#3d7249"/><stop offset=".5" stop-color="#2f5d3a"/><stop offset="1" stop-color="#244a2d"/></linearGradient></defs>
+      <ellipse cx="150" cy="362" rx="95" ry="12" fill="#00000018"/>
+      <rect x="120" y="14" width="60" height="44" rx="10" fill="#c9923a"/>
+      <rect x="132" y="56" width="36" height="22" fill="#d9b06a"/>
+      <path d="M92 100q0-24 40-24h36q40 0 40 24v236q0 24-24 24H116q-24 0-24-24z" fill="url(#gl3)"/>
+      <rect x="98" y="98" width="104" height="244" rx="10" fill="#faf6ee"/>
+      <g font-family="Arial,sans-serif" fill="#1f2a1f">
+        <text x="150" y="116" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="700" fill="#2f5d3a">Bonoja Organic Hair Oil</text>
+        <text x="106" y="134" font-size="6.5" font-weight="700" letter-spacing="1" fill="#c9923a">INGREDIENTS</text>
+        <text x="106" y="144" font-size="6">Cocos nucifera (coconut) oil, Nigella sativa</text>
+        <text x="106" y="153" font-size="6">(black seed) oil, Phyllanthus emblica (amla),</text>
+        <text x="106" y="162" font-size="6">Eclipta prostrata (bhringraj), Azadirachta</text>
+        <text x="106" y="171" font-size="6">indica (neem), Hibiscus rosa-sinensis,</text>
+        <text x="106" y="180" font-size="6">Trigonella foenum-graecum (fenugreek).</text>
+        <text x="106" y="196" font-size="6.5" font-weight="700" letter-spacing="1" fill="#c9923a">DIRECTIONS</text>
+        <text x="106" y="206" font-size="6">Warm slightly. Massage into scalp 2–3×/week.</text>
+        <text x="106" y="215" font-size="6">Leave 1 hr or overnight, then wash.</text>
+        <text x="106" y="224" font-size="6">Patch test first. For external use only.</text>
+        <rect x="106" y="234" width="88" height="42" rx="6" fill="#f0f5e4"/>
+        <text x="112" y="247" font-size="6.5" font-weight="700">MFG</text><text x="142" y="247" font-size="6.5">10 Nov 2026</text>
+        <text x="112" y="258" font-size="6.5" font-weight="700">EXP</text><text x="142" y="258" font-size="6.5">09 Nov 2027</text>
+        <text x="112" y="269" font-size="6.5" font-weight="700">BATCH</text><text x="142" y="269" font-size="6.5">BN-2611-A</text>
+        <line x1="108" y1="298" x2="168" y2="298" stroke="#1f2a1f" stroke-width="24" stroke-dasharray="1.5 1 3 1.2 1 1.5 2 1"/>
+        <text x="176" y="296" font-size="6.5" font-weight="700">250 ml</text>
+        <text x="176" y="305" font-size="5.5">Made in Bangladesh</text>
+        <text x="106" y="330" font-size="5.5" fill="#5d685d">Store away from sunlight. Best before EXP date.</text>
+      </g>
+    </svg>
+    <div class="tabs"><button class="on" id="tf" onclick="view('f')">Front</button><button id="tb" onclick="view('b')">Back</button></div>
+  </div>
+</div></header>
+<div class="tb"><div class="wrap"><div>🔬 Lab-tested every batch</div><div>🐇 Cruelty-free</div><div>🌱 Vegan formula</div><div>🚫 No parabens, silicones or mineral oil</div><div>♻️ Recyclable glass</div><div>💯 30-day money-back guarantee</div></div></div>
+
+<section id="quiz"><div class="wrap">
+  <div class="eyebrow">Find your formula</div>
+  <h2>Which Bonoja is right for your hair?</h2>
+  <p class="lead">Answer four quick questions and we’ll match you with one of our three formulas. Each one starts with the same cold-pressed coconut base, with a different hero herb.</p>
+  <div class="qz"><div class="qn" id="qn"></div><div class="qbar"><i id="qp"></i></div><div id="qb"></div></div>
+  <div class="grid g3" style="margin-top:56px"><div class="card fx" id="fx-fall"><h3>Hair Fall Control</h3><div class="sub">Strengthens roots and reduces breakage</div><div class="chips"><span>Virgin coconut oil</span><span class="hero">Bhringraj</span><span>Amla</span><span>Black seed oil</span></div><div class="best"><b>Best for:</b> Hair fall, thinning and weak roots</div><div class="pr"><b class="m" data-v="749">৳749</b><s class="m" data-v="950">৳950</s> <small style="color:var(--mute)">· 250 ml</small></div><div class="save" style="margin-bottom:14px">🎁 Includes a free refillable wooden oil comb</div><button class="btn" onclick="add('pF')">Add to cart</button></div><div class="card fx" id="fx-scalp"><h3>Scalp Care</h3><div class="sub">Calms itch and keeps the scalp clean</div><div class="chips"><span>Virgin coconut oil</span><span class="hero">Neem</span><span>Fenugreek</span><span>Black seed oil</span></div><div class="best"><b>Best for:</b> Dandruff, flakes and an itchy or oily scalp</div><div class="pr"><b class="m" data-v="749">৳749</b><s class="m" data-v="950">৳950</s> <small style="color:var(--mute)">· 250 ml</small></div><div class="save" style="margin-bottom:14px">🎁 Includes a free refillable wooden oil comb</div><button class="btn" onclick="add('pS')">Add to cart</button></div><div class="card fx" id="fx-dry"><h3>Dry &amp; Frizz Repair</h3><div class="sub">Softens, smooths and adds shine</div><div class="chips"><span>Extra-rich coconut oil</span><span class="hero">Hibiscus</span><span>Fenugreek</span><span>Amla</span></div><div class="best"><b>Best for:</b> Dry, frizzy, rough or colour-treated hair</div><div class="pr"><b class="m" data-v="749">৳749</b><s class="m" data-v="950">৳950</s> <small style="color:var(--mute)">· 250 ml</small></div><div class="save" style="margin-bottom:14px">🎁 Includes a free refillable wooden oil comb</div><button class="btn" onclick="add('pD')">Add to cart</button></div>
+  </div>
+  <p class="note">Prefer one all-rounder? The Signature Blend with all six ingredients is in the packages below.</p>
+</div></section>
+
+<section id="ingredients"><div class="wrap">
+  <div class="eyebrow">Origin &amp; sourcing</div>
+  <h2>Where every drop comes from</h2>
+  <p class="lead">Each ingredient has a traditional place in Ayurvedic and South Asian hair care. We buy directly from named farming communities, so we can trace it, test it and pay growers fairly.</p>
+  <div class="grid g3 ing">
+    <div class="card" data-k="coconut"><div class="ico">🥥</div><h3>Virgin coconut oil</h3><div class="loc">📍 Barishal &amp; Patuakhali coast</div><p>The base oil. Rich in lauric acid, which penetrates the hair shaft and reduces protein loss. Cold-pressed from sun-dried copra.</p></div>
+    <div class="card" data-k="amla"><div class="ico">🫒</div><h3>Amla (Indian gooseberry)</h3><div class="loc">📍 Rajshahi orchards</div><p>A traditional source of vitamin C and antioxidants, used for centuries to support scalp health and natural colour.</p></div>
+    <div class="card" data-k="bhringraj"><div class="ico">🌼</div><h3>Bhringraj</h3><div class="loc">📍 Sylhet &amp; Moulvibazar hills</div><p>Called the “king of herbs” for hair in Ayurveda. Used to support growth and reduce thinning.</p></div>
+    <div class="card" data-k="neem"><div class="ico">🍃</div><h3>Neem leaf</h3><div class="loc">📍 Chapainawabganj</div><p>Naturally clarifying. Helps keep the scalp free of dandruff and itch.</p></div>
+    <div class="card" data-k="blackseed"><div class="ico">⚫</div><h3>Black seed (Kalonji)</h3><div class="loc">📍 Faridpur &amp; Jashore farms</div><p>Cold-pressed seed oil rich in thymoquinone, valued for strengthening follicles.</p></div>
+    <div class="card" data-k="hibiscus"><div class="ico">🌺</div><h3>Hibiscus &amp; fenugreek</h3><div class="loc">📍 Gazipur &amp; Bogura</div><p>Add slip, shine and softness, and support thicker-looking strands.</p></div>
+  </div>
+  <p class="note"><b>For the brand owner:</b> the pickup places above are realistic examples for Bangladesh. Replace them with your real farms and attach each supplier’s organic certificate or lab report before publishing.</p>
+</div></section>
+
+<section id="process" class="dark"><div class="wrap">
+  <div class="eyebrow">How we made it</div>
+  <h2>Slow-made in small batches</h2>
+  <p class="lead">No shortcuts, no heat shocks, no fillers. From farm to bottle takes about 21 days.</p>
+  <div class="steps">
+    <div class="step"><h3>Harvest &amp; inspect</h3><p>Herbs are hand-picked at peak potency, then checked for pesticide residue before they enter our unit.</p></div>
+    <div class="step"><h3>Sun-dry &amp; clean</h3><p>Leaves and flowers are dried in shade and sorted by hand. Nothing is bleached or sprayed.</p></div>
+    <div class="step"><h3>Cold-press</h3><p>Coconut and black seed are pressed below 40°C so heat-sensitive nutrients survive.</p></div>
+    <div class="step"><h3>Slow infusion</h3><p>Herbs steep in the oil for 14 days under gentle warmth, drawing out their active compounds.</p></div>
+    <div class="step"><h3>Filter &amp; test</h3><p>Triple-filtered, then tested in a lab for purity and microbes. Each batch gets a number.</p></div>
+    <div class="step"><h3>Bottle</h3><p>Packed in UV-protective glass so the oil stays fresh without synthetic preservatives.</p></div>
+  </div>
+</div></section>
+
+<section id="story" style="background:#f3ecda"><div class="wrap">
+  <div class="story two">
+    <div class="art"><svg viewBox="0 0 520 380" role="img" aria-label="Illustration of a coconut and herb farm">
+<defs><g id="palm"><path d="M0 0c-6 30-6 60-2 92" stroke="#8a5a2e" stroke-width="9" fill="none" stroke-linecap="round"/><g fill="#3f7a3a"><path d="M0 0c-30-30-60-20-78-2 30-8 52-2 78 2z"/><path d="M0 0c30-30 60-20 78-2-30-8-52-2-78 2z"/><path d="M0 0c-10-40-40-52-60-48 26 8 42 22 60 48z"/><path d="M0 0c10-40 40-52 60-48-26 8-42 22-60 48z"/><path d="M0 0c0-40 6-60 0-72 8 22 8 48 0 72z"/></g><circle cx="-4" cy="6" r="6" fill="#7a5524"/><circle cx="6" cy="8" r="6" fill="#7a5524"/></g></defs>
+<rect width="520" height="380" rx="28" fill="#eaf4f7"/>
+<circle cx="410" cy="78" r="38" fill="#f2c866"/>
+<path d="M0 230c90-40 170-40 260-10s180 20 260-20v180H0z" fill="#9fc27a"/>
+<path d="M0 275c110-30 200-20 300 0s160 10 220-10v115H0z" fill="#6f9b57"/>
+<g stroke="#4f7a3d" stroke-width="3" fill="none" opacity=".7"><path d="M10 325c140-20 280-20 500-2"/><path d="M30 350c120-18 240-18 440 0"/></g>
+<g fill="#3f7a3a"><circle cx="80" cy="322" r="6"/><circle cx="130" cy="318" r="6"/><circle cx="190" cy="318" r="6"/><circle cx="260" cy="320" r="6"/><circle cx="330" cy="319" r="6"/><circle cx="400" cy="321" r="6"/><circle cx="460" cy="322" r="6"/></g>
+<use href="#palm" x="110" y="205"/><use href="#palm" x="420" y="215"/><use href="#palm" x="300" y="235" transform="translate(40 -10) scale(.9)"/>
+<g><ellipse cx="238" cy="268" rx="22" ry="7" fill="#d9b06a"/><path d="M226 268c2-14 22-14 24 0z" fill="#d9b06a"/><circle cx="238" cy="282" r="9" fill="#e2ae88"/><path d="M222 340c0-30 6-48 16-48s16 18 16 48z" fill="#2f5d3a"/><path d="M252 316c14 0 20 8 18 18h-26z" fill="#c08a4a"/></g>
+</svg></div>
+    <div>
+      <div class="eyebrow">Our farming story</div>
+      <h2>It started with a grandmother’s oiling ritual.</h2>
+      <p style="color:var(--mute);margin-bottom:14px">Our founder grew up watching weekend hair-oiling with oil pressed at home. Years later, the shop-bought bottles smelled of perfume and left hair heavier, not healthier. So we went back to the source: the coconut groves of the southern coast, the hill herb gardens of Sylhet and the orchards of the north.</p>
+      <p style="color:var(--mute);margin-bottom:18px">We work with a small group of partner growers who farm without synthetic pesticides. We buy at the farm gate, pay on time and visit often, and we only buy what is in season, so every batch has a farm behind it.</p>
+      <ul class="checks"><li>Direct farm-gate buying, with no middlemen</li><li>Fair, on-time payment to growers</li><li>Seasonal harvests and sun-drying only</li></ul>
+    </div>
+  </div>
+  <div class="story two">
+    <div>
+      <div class="eyebrow">Our factory setup</div>
+      <h2>A small, clean unit built for small batches.</h2>
+      <p style="color:var(--mute)">Each stage is kept separate and checked. Staff wear gloves, hair nets and aprons, and every surface the oil touches is stainless steel or food-grade. Each batch gets its own number and record sheet.</p>
+      <ol class="fl"><li><span><b>Cold press:</b> coconut and black seed pressed below 40°C</span></li><li><span><b>Infusion tanks:</b> herbs steep in the oil for 14 days</span></li><li><span><b>Filtration:</b> triple-filtered for clarity</span></li><li><span><b>Lab corner:</b> samples tested before release</span></li><li><span><b>Bottling:</b> UV-protective glass, labelled with MFG and EXP dates</span></li></ol>
+    </div>
+    <div class="art"><svg viewBox="0 0 520 380" role="img" aria-label="Illustration of the Bonoja production line: cold press, infusion tanks, filtration, lab corner and bottling">
+<rect width="520" height="380" rx="28" fill="#f4efe2"/>
+<rect x="0" y="86" width="520" height="190" fill="#e8efdc"/>
+<rect x="0" y="276" width="520" height="104" rx="0" fill="#d9d2bd"/>
+<g><rect x="22" y="170" width="72" height="84" rx="8" fill="#6f9b57"/><path d="M32 140h54l-10 28H42z" fill="#8a5a2e"/><rect x="44" y="196" width="28" height="12" rx="3" fill="#e3b457"/></g>
+<g><rect x="120" y="150" width="42" height="104" rx="16" fill="#9aa8a0"/><rect x="124" y="196" width="34" height="54" rx="12" fill="#e3b457"/><rect x="172" y="150" width="42" height="104" rx="16" fill="#9aa8a0"/><rect x="176" y="204" width="34" height="46" rx="12" fill="#e3b457"/></g>
+<g><rect x="246" y="140" width="34" height="114" rx="10" fill="#b9c5bd"/><g stroke="#8a9a90" stroke-width="3"><path d="M246 170h34M246 195h34M246 220h34"/></g><path d="M263 254v22" stroke="#e3b457" stroke-width="6"/></g>
+<g><rect x="326" y="214" width="90" height="40" rx="6" fill="#c08a4a"/><path d="M360 150h22v34l20 40h-62l20-40z" fill="#e3b457" opacity=".9"/><rect x="356" y="144" width="30" height="8" rx="3" fill="#8a9a90"/></g>
+<g><rect x="424" y="248" width="92" height="10" rx="5" fill="#555"/><g fill="#2f5d3a"><rect x="432" y="206" width="20" height="42" rx="6"/><rect x="458" y="206" width="20" height="42" rx="6"/><rect x="484" y="206" width="20" height="42" rx="6"/></g><g fill="#c9923a"><rect x="436" y="198" width="12" height="9" rx="2"/><rect x="462" y="198" width="12" height="9" rx="2"/><rect x="488" y="198" width="12" height="9" rx="2"/></g></g>
+<g font-family="Arial" font-size="11" fill="#1f2a1f" text-anchor="middle"><circle cx="58" cy="298" r="12" fill="#2f5d3a"/><circle cx="167" cy="298" r="12" fill="#2f5d3a"/><circle cx="263" cy="298" r="12" fill="#2f5d3a"/><circle cx="371" cy="298" r="12" fill="#2f5d3a"/><circle cx="470" cy="298" r="12" fill="#2f5d3a"/>
+<g fill="#fff" font-weight="700"><text x="58" y="302">1</text><text x="167" y="302">2</text><text x="263" y="302">3</text><text x="371" y="302">4</text><text x="470" y="302">5</text></g>
+<text x="58" y="332">Cold press</text><text x="167" y="332">Infusion</text><text x="263" y="332">Filtration</text><text x="371" y="332">Lab test</text><text x="470" y="332">Bottling</text></g>
+</svg></div>
+  </div>
+  <div class="gal"><figure class="ph"><div class="slot"><b>📷</b>Add your photo<br>farm-coconut.jpg</div><img src="farm-coconut.jpg" alt="Coconut grove, southern coast" loading="lazy" onerror="this.remove()"><figcaption>Coconut grove, southern coast</figcaption></figure><figure class="ph"><div class="slot"><b>📷</b>Add your photo<br>farm-herbs.jpg</div><img src="farm-herbs.jpg" alt="Herb harvest, Sylhet hills" loading="lazy" onerror="this.remove()"><figcaption>Herb harvest, Sylhet hills</figcaption></figure><figure class="ph"><div class="slot"><b>📷</b>Add your photo<br>factory-press.jpg</div><img src="factory-press.jpg" alt="Cold-press room" loading="lazy" onerror="this.remove()"><figcaption>Cold-press room</figcaption></figure><figure class="ph"><div class="slot"><b>📷</b>Add your photo<br>factory-infusion.jpg</div><img src="factory-infusion.jpg" alt="Infusion tanks" loading="lazy" onerror="this.remove()"><figcaption>Infusion tanks</figcaption></figure><figure class="ph"><div class="slot"><b>📷</b>Add your photo<br>lab-testing.jpg</div><img src="lab-testing.jpg" alt="Lab sampling corner" loading="lazy" onerror="this.remove()"><figcaption>Lab sampling corner</figcaption></figure><figure class="ph"><div class="slot"><b>📷</b>Add your photo<br>product-packing.jpg</div><img src="product-packing.jpg" alt="Bottling and labelling" loading="lazy" onerror="this.remove()"><figcaption>Bottling and labelling</figcaption></figure><figure class="ph"><div class="slot"><b>📷</b>Add your photo<br>product-front.jpg</div><img src="product-front.jpg" alt="Bottle, front" loading="lazy" onerror="this.remove()"><figcaption>Bottle, front</figcaption></figure><figure class="ph"><div class="slot"><b>📷</b>Add your photo<br>product-back.jpg</div><img src="product-back.jpg" alt="Bottle, back label" loading="lazy" onerror="this.remove()"><figcaption>Bottle, back label</figcaption></figure></div>
+  <p class="note">The story and setup are sample text, and the photo tiles are slots. Keep your photos in the same folder as this file, with the file names shown, and they appear automatically.</p>
+</div></section>
+
+<section><div class="wrap two">
+  <div>
+    <div class="eyebrow">Why this is organic</div>
+    <h2>Organic is a standard, not a label</h2>
+    <p class="lead" style="margin-bottom:22px">We hold ourselves to the principles behind recognised organic certification.</p>
+    <ul class="checks">
+      <li>Grown without synthetic pesticides, herbicides or chemical fertiliser</li>
+      <li>No GMO seeds, and no irradiation of raw material</li>
+      <li>Extracted mechanically: no hexane or chemical solvents</li>
+      <li>Free from mineral oil, parabens, sulphates, silicones and artificial fragrance</li>
+      <li>Farm-to-bottle batch traceability</li>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="eyebrow">Is it really organic? Check it yourself</div>
+    <div class="vs">
+      <div class="v"><i>🔢</i><div><h4>1. Look up the batch number</h4><p>Enter the number on the bottle at our website to see farm, press date and lab report.</p></div></div>
+      <div class="v"><i>📄</i><div><h4>2. Ask for the certificate</h4><p>Request the supplier’s organic certificate and lab test. We share them on request.</p></div></div>
+      <div class="v"><i>🧴</i><div><h4>3. Read the label</h4><p>Short ingredient list, with no “parfum”, “mineral oil”, “paraffinum liquidum” or dimethicone.</p></div></div>
+      <div class="v"><i>👃</i><div><h4>4. Smell and feel</h4><p>Real herbal oil smells earthy and nutty, not perfumed. Pure coconut base also thickens in cold weather.</p></div></div>
+      <div class="v"><i>🧪</i><div><h4>5. Patch test</h4><p>Apply a drop behind your ear for 24 hours before first full use.</p></div></div>
+    </div>
+  </div>
+</div></section>
+
+<section style="background:#f3ecda"><div class="wrap two">
+  <div>
+    <div class="eyebrow">The benefits</div>
+    <h2>What you’ll notice</h2>
+    <ul class="checks">
+      <li>Less hair fall and breakage</li>
+      <li>Stronger, thicker-feeling roots</li>
+      <li>Calmer, cleaner scalp with less dandruff and itch</li>
+      <li>Natural shine without greasy build-up</li>
+      <li>Softer, less frizzy hair</li>
+      <li>Safe for regular use and gentle enough for families</li>
+    </ul>
+  </div>
+  <div>
+    <div class="eyebrow">Who it’s for</div>
+    <h2>Made for you if…</h2>
+    <div style="margin-bottom:20px">
+      <span class="tag">Hair fall &amp; thinning</span><span class="tag">Dandruff or itchy scalp</span><span class="tag">Dry, frizzy hair</span><span class="tag">Students &amp; professionals</span><span class="tag">New mothers</span><span class="tag">Men &amp; women</span><span class="tag">Chemical-free seekers</span>
+    </div>
+    <p style="font-size:.9rem;color:var(--mute);margin-bottom:12px"><b style="color:#9a4a3a">Not recommended for:</b></p>
+    <span class="tag no">Known nut/coconut allergy</span><span class="tag no">Children under 3</span>
+    <p style="font-size:.82rem;color:var(--mute);margin-top:8px">Results vary by person. If you have a scalp condition, consult a doctor.</p>
+  </div>
+</div></section>
+
+<section id="ritual"><div class="wrap two">
+  <div class="art"><svg viewBox="0 0 520 460" role="img" aria-label="Illustration: a woman with long hair combing it, with a Bonoja oil bottle in front of her">
+<defs>
+<linearGradient id="gl2" x1="0" x2="1"><stop offset="0" stop-color="#3d7249"/><stop offset="1" stop-color="#244a2d"/></linearGradient>
+<linearGradient id="oil2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e3b457"/><stop offset="1" stop-color="#b57a22"/></linearGradient>
+<linearGradient id="hr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4a3025"/><stop offset="1" stop-color="#1e120d"/></linearGradient>
+</defs>
+<rect width="520" height="460" rx="28" fill="#eaf0db"/>
+<circle cx="270" cy="210" r="175" fill="#f6efd9"/>
+<path d="M92 120c22-22 52-20 62 2-22 22-52 20-62-2z" fill="#6f9b57" opacity=".45"/>
+<path d="M430 90c-20-20-50-16-58 6 22 20 52 16 58-6z" fill="#6f9b57" opacity=".45"/>
+<path d="M270 68c-72 0-100 52-98 122 2 70-14 130-34 180-4 16 10 26 28 22 30-8 62-10 104-10s74 2 104 10c18 4 32-6 28-22-20-50-36-110-34-180 2-70-26-122-98-122z" fill="url(#hr)"/>
+<rect x="252" y="222" width="36" height="60" rx="14" fill="#e2ae88"/>
+<path d="M140 460c0-110 54-170 130-178 76 8 130 68 130 178z" fill="#6f9b57"/>
+<path d="M236 284c10 22 24 30 34 30s24-8 34-30c-10-10-22-14-34-14s-24 4-34 14z" fill="#e2ae88"/>
+<ellipse cx="270" cy="168" rx="56" ry="68" fill="#efc4a0"/>
+<path d="M212 150c0-52 30-78 58-78s58 26 58 78c-22-8-40-30-58-48c-18 18-36 40-58 48z" fill="url(#hr)"/>
+<path d="M244 170q10 8 20 0M276 170q10 8 20 0" stroke="#3a261c" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+<path d="M243 158q10-6 21-1M276 157q11-5 21 1" stroke="#3a261c" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+<path d="M270 178q-4 10 2 13" stroke="#c78f6c" stroke-width="2" fill="none" stroke-linecap="round"/>
+<path d="M255 206q15 12 30 0" stroke="#b5594a" stroke-width="3" fill="none" stroke-linecap="round"/>
+<circle cx="241" cy="194" r="8" fill="#f0a493" opacity=".5"/><circle cx="299" cy="194" r="8" fill="#f0a493" opacity=".5"/>
+<path d="M322 128c26 26 40 70 40 130 0 50 8 96 20 136 4 12-12 16-26 6-26-20-38-62-38-118 0-40-4-96 4-154z" fill="url(#hr)"/>
+<path d="M218 128c-26 26-40 70-40 130 0 50-8 96-20 136-4 12 12 16 26 6 26-20 38-62 38-118 0-40 4-96-4-154z" fill="url(#hr)"/>
+<path d="M346 190c10 40 10 100 22 170M194 190c-10 40-10 100-22 170" stroke="#6b4636" stroke-width="2" fill="none" opacity=".5"/>
+<path d="M330 362c20-40 38-90 46-152" stroke="#e2ae88" stroke-width="22" fill="none" stroke-linecap="round"/>
+<path d="M330 362c8-14 14-26 20-40" stroke="#6f9b57" stroke-width="32" fill="none" stroke-linecap="round"/>
+<rect x="354" y="232" width="48" height="24" rx="7" fill="#c08a4a"/>
+<line x1="357" y1="278" x2="399" y2="278" stroke="#c08a4a" stroke-width="44" stroke-dasharray="3.5 3.5"/>
+<ellipse cx="378" cy="222" rx="18" ry="14" fill="#e2ae88"/>
+<g fill="#e3b457"><path d="M368 306c-3 5-5 7-5 10a5 5 0 0010 0c0-3-2-5-5-10z"/><path d="M392 322c-3 5-5 7-5 10a5 5 0 0010 0c0-3-2-5-5-10z"/></g>
+<rect x="0" y="400" width="520" height="60" fill="#ecdcb8"/><rect y="400" width="520" height="5" fill="#d8c59a"/>
+<ellipse cx="200" cy="404" rx="46" ry="6" fill="#00000022"/>
+<g transform="translate(110 187) scale(.6)">
+<rect x="120" y="14" width="60" height="44" rx="10" fill="#c9923a"/>
+<rect x="132" y="56" width="36" height="22" fill="#d9b06a"/>
+<path d="M92 100q0-24 40-24h36q40 0 40 24v236q0 24-24 24H116q-24 0-24-24z" fill="url(#gl2)"/>
+<path d="M104 190h92v140q0 10-10 10h-72q-10 0-10-10z" fill="url(#oil2)"/>
+<rect x="104" y="120" width="92" height="140" rx="12" fill="#faf6ee"/>
+<text x="150" y="166" text-anchor="middle" font-family="Georgia,serif" font-size="25" font-weight="700" fill="#2f5d3a">Bonoja</text>
+<text x="150" y="188" text-anchor="middle" font-family="Arial" font-size="9" letter-spacing="2" fill="#c9923a">ORGANIC HAIR OIL</text>
+</g>
+</svg></div>
+  <div>
+    <div class="eyebrow">The Bonoja ritual</div>
+    <h2>Five minutes. Every other night.</h2>
+    <p class="lead" style="margin-bottom:26px">Oiling should feel like a pause, not a chore. Warm a little oil, comb it through, and let it work while you rest.</p>
+    <div class="vs">
+      <div class="v"><i>1</i><div><h4>Warm a few drops</h4><p>Rub a teaspoon of oil between your palms, or fill your wooden comb.</p></div></div>
+      <div class="v"><i>2</i><div><h4>Comb from roots to tips</h4><p>Work in sections with slow strokes. The comb spreads oil evenly and detangles gently.</p></div></div>
+      <div class="v"><i>3</i><div><h4>Massage your scalp</h4><p>Use your fingertips in small circles for 3–5 minutes.</p></div></div>
+      <div class="v"><i>4</i><div><h4>Rest, then rinse</h4><p>Leave for an hour or overnight, then wash with a mild shampoo.</p></div></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="comb" style="background:#f3ecda"><div class="wrap two">
+  <div class="card combcard"><span class="gift">🎁 FREE with Family &amp; Bundle</span><br><svg viewBox="0 0 380 150" role="img" aria-label="Refillable wooden oil comb">
+<ellipse cx="190" cy="144" rx="150" ry="5" fill="#00000012"/>
+<line x1="156" y1="97" x2="352" y2="97" stroke="#b57f3b" stroke-width="52" stroke-dasharray="5 5.5"/>
+<rect x="150" y="26" width="214" height="46" rx="14" fill="#c9954f"/>
+<rect x="20" y="16" width="150" height="64" rx="30" fill="#b57f3b"/>
+<rect x="68" y="34" width="70" height="28" rx="14" fill="#e3b457"/>
+<text x="103" y="52" text-anchor="middle" font-family="Arial" font-size="10" font-weight="700" fill="#6b440f">OIL</text>
+<circle cx="46" cy="48" r="17" fill="#2f5d3a"/><circle cx="46" cy="48" r="8" fill="#6f9b57"/>
+<g fill="#e3b457"><path d="M180 126c-3 5-5 7-5 10a5 5 0 0010 0c0-3-2-5-5-10z"/><path d="M250 126c-3 5-5 7-5 10a5 5 0 0010 0c0-3-2-5-5-10z"/><path d="M320 126c-3 5-5 7-5 10a5 5 0 0010 0c0-3-2-5-5-10z"/></g>
+</svg></div>
+  <div>
+    <div class="eyebrow">Special offer</div>
+    <h2>Free refillable wooden oil comb</h2>
+    <p class="lead" style="margin-bottom:22px">A hand-finished wooden comb with a built-in oil reservoir. Fill it once and comb the oil through your hair, with no messy palms.</p>
+    <ul class="checks">
+      <li>Hollow handle holds about 10 ml of oil, refilled from any Bonoja bottle</li>
+      <li>Fine channels release the oil evenly along the teeth as you comb</li>
+      <li>Wide, smooth neem-wood teeth are gentle on the scalp and reduce static and breakage</li>
+      <li>Screw-top cap keeps it leak-free in your bag</li>
+      <li>Worth <span class="m" data-v="399">৳399</span>. Free with the Family and Bundle packages</li>
+    </ul>
+    <div class="cta" style="margin-top:26px">
+      <button class="btn" onclick="add('p250')">Get it free with Family</button>
+      <button class="btn ghost" onclick="add('pc')">Buy comb alone · <span class="m" data-v="399">৳399</span></button>
+    </div>
+  </div>
+</div></section>
+
+<section id="compare"><div class="wrap">
+  <div class="eyebrow">Honest comparison</div>
+  <h2>Bonoja vs. typical market hair oils</h2>
+  <p class="lead">Many “herbal” oils are mostly mineral oil with a little fragrance. Here is the difference.</p>
+  <div class="tbl"><table>
+    <tr><th></th><th>Bonoja Organic</th><th>Typical market oil</th></tr>
+    <tr><td>Base oil</td><td>Cold-pressed virgin coconut</td><td>Often mineral oil / refined blends</td></tr>
+    <tr><td>Herbs</td><td>Real herbs, slow-infused 14 days</td><td>Flavouring or extracts in small amounts</td></tr>
+    <tr><td>Fragrance</td><td>Natural herbal aroma only</td><td>Synthetic perfume</td></tr>
+    <tr><td>Preservatives</td><td>None. Sealed in UV glass</td><td>Parabens / synthetic preservatives</td></tr>
+    <tr><td>Traceability</td><td>Batch number and lab report</td><td>Rarely disclosed</td></tr>
+    <tr><td>Feel</td><td>Light, washes out easily</td><td>Sticky or waxy film</td></tr>
+    <tr><td>Packaging</td><td>Recyclable glass</td><td>Plastic</td></tr>
+  </table></div>
+</div></section>
+
+<section id="pricing" style="background:#f3ecda"><div class="wrap">
+  <div class="eyebrow">Packages &amp; offers</div>
+  <h2>Pick your size. Save more with bundles.</h2>
+  <p class="lead">Launch offer prices are live for a limited time.</p>
+  <div class="grid g3">
+    <div class="card plan"><h3>Starter</h3><div class="size">100 ml · ~1 month</div>
+      <div class="pr"><b class="m" data-v="349">৳349</b><s class="m" data-v="450">৳450</s></div><div class="save">Save <span class="m" data-v="101">৳101</span> (22%)</div>
+      <ul><li>✓ Cold-pressed organic oil</li><li>✓ Batch-tested</li><li>✓ Glass bottle</li></ul>
+      <button class="btn ghost" onclick="add('p100')">Add to cart</button></div>
+    <div class="card plan pop"><span class="ribbon">Most popular</span><h3>Family</h3><div class="size">250 ml · ~2.5 months</div>
+      <div class="pr"><b class="m" data-v="749">৳749</b><s class="m" data-v="950">৳950</s></div><div class="save">Save <span class="m" data-v="201">৳201</span> (21%)</div>
+      <ul><li>✓ Best value per ml</li><li>🎁 Free refillable wooden oil comb</li><li>✓ Batch-tested</li></ul>
+      <button class="btn" onclick="add('p250')">Add to cart</button></div>
+    <div class="card plan"><h3>Hair Care Bundle</h3><div class="size">3 × 250 ml · ~8 months</div>
+      <div class="pr"><b class="m" data-v="1999">৳1,999</b><s class="m" data-v="2850">৳2,850</s></div><div class="save">Save <span class="m" data-v="851">৳851</span> (30%) · Free delivery</div>
+      <ul><li>✓ Lowest price per ml</li><li>🎁 Free refillable wooden oil comb</li><li>✓ Free delivery anywhere in Bangladesh</li></ul>
+      <button class="btn ghost" onclick="add('p750')">Add to cart</button></div>
+  </div>
+  <div class="ship">
+    <div class="card"><h4>🏠 Home delivery: Dhaka</h4><div class="big m" data-v="60">৳60</div>1–2 working days</div>
+    <div class="card"><h4>🚚 Home delivery: outside Dhaka</h4><div class="big m" data-v="120">৳120</div>3–5 working days</div>
+    <div class="card"><h4>🏬 Shop pickup</h4><div class="big">Free</div>Collect from our shop. We’ll call you when it’s ready.</div>
+    <div class="card"><h4>🌍 International</h4><div class="big">Worldwide</div>7–14 days. Shipping is quoted after you place your order.</div>
+    <div class="card free"><h4>🎁 Free delivery</h4><div class="big">Over <span class="m" data-v="1500">৳1,500</span></div>Order <span class="m" data-v="1500">৳1,500</span> or more (or the Bundle) and we deliver free anywhere in Bangladesh.</div>
+  </div>
+  <p style="margin-top:18px;font-size:.88rem;color:var(--mute)">30-day money-back guarantee · Prices in other currencies are indicative. Orders are billed in BDT.</p>
+  <div class="pay"><span style="background:#e2136e">bKash</span><span style="background:#f6921e">Nagad</span><span style="background:#8c3494">Rocket</span><span style="background:#1a1f71">Visa / Mastercard</span><span style="background:#2f5d3a">Cash on delivery</span></div>
+</div></section>
+
+<section id="guarantee"><div class="wrap two" style="align-items:center">
+  <div style="text-align:center"><svg viewBox="0 0 240 240" width="220" role="img" aria-label="30-day money-back guarantee seal"><circle cx="120" cy="120" r="112" fill="#c9923a"/><circle cx="120" cy="120" r="98" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="3 5"/><circle cx="120" cy="120" r="88" fill="#2f5d3a"/><text x="120" y="132" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-size="70" font-weight="700" fill="#fff">30</text><text x="120" y="156" text-anchor="middle" font-family="Arial" font-size="13" font-weight="700" letter-spacing="3" fill="#fff">DAY MONEY-BACK</text><text x="120" y="176" text-anchor="middle" font-family="Arial" font-size="12" letter-spacing="4" fill="#e3b457">GUARANTEE</text><path d="M120 66c-10 4-14 15-10 25 10-3 15-13 10-25z" fill="#6f9b57"/></svg></div>
+  <div>
+    <div class="eyebrow">Our promise</div>
+    <h2>Try it for 30 days. Love it, or get your money back.</h2>
+    <p class="lead" style="margin-bottom:24px">Hair care takes a few weeks to show. So we give you a full month to decide, with no risk.</p>
+    <div class="vs">
+      <div class="v"><i>1</i><div><h4>Use it for up to 30 days</h4><p>Follow the directions 2–3 times a week.</p></div></div>
+      <div class="v"><i>2</i><div><h4>Message us with your order number</h4><p>Reach us by phone, WhatsApp or email within 30 days of delivery.</p></div></div>
+      <div class="v"><i>3</i><div><h4>Get your refund</h4><p>We refund the product price by bKash, Nagad, card or cash within 5–7 working days.</p></div></div>
+    </div>
+    <p style="font-size:.78rem;color:var(--mute);margin-top:16px">Delivery charges are not refunded. Sample terms. Replace with your actual policy.</p>
+  </div>
+</div></section>
+
+<section id="proofs" style="background:#f3ecda"><div class="wrap">
+  <div class="eyebrow">Proof, not promises</div>
+  <h2>Download our documents</h2>
+  <p class="lead">Every batch comes with a lab report, a sourcing declaration and a traceability sheet. Download them, or check your own bottle’s batch number below.</p>
+  <div class="grid g3"><div class="card doc"><div class="ic">🧪</div><span class="smp">SAMPLE TEMPLATE</span><h3>Lab test report</h3><p>Purity, oxidation, heavy metals, pesticide residue and microbial results for batch BN-2611-A.</p><button class="btn sm" onclick="dl('lab')">Download PDF</button></div><div class="card doc"><div class="ic">🌿</div><span class="smp">SAMPLE TEMPLATE</span><h3>Organic input declaration</h3><p>Supplier, farm region, harvest date and organic certificate details for each ingredient.</p><button class="btn sm" onclick="dl('org')">Download PDF</button></div><div class="card doc"><div class="ic">📋</div><span class="smp">SAMPLE TEMPLATE</span><h3>Batch traceability sheet</h3><p>Harvest, pressing, infusion, filtration and bottling dates, signed for each batch.</p><button class="btn sm" onclick="dl('bat')">Download PDF</button></div></div>
+  <div class="card" style="margin-top:22px">
+    <h3 style="font-size:1.2rem">Check your batch number</h3>
+    <p style="font-size:.9rem;color:var(--mute)">Find the batch number on the back label of your bottle. Try <b>BN-2611-A</b>.</p>
+    <div class="lk"><input id="bn" placeholder="e.g. BN-2611-A" onkeydown="if(event.key=='Enter')lookup()"><button class="btn sm" onclick="lookup()">Check batch</button></div>
+    <div id="bres"></div>
+  </div>
+  <p class="note">These PDFs are sample templates marked SAMPLE so the download works in this demo. Replace them with your real lab report and certificates, and never publish a template as a real document.</p>
+</div></section>
+
+<section id="visit"><div class="wrap">
+  <div class="eyebrow">Visit our shop</div>
+  <h2>Come smell the oil before you buy.</h2>
+  <p class="lead">Try the oil, test the wooden comb and pick up your order for free.</p>
+  <div class="two" style="align-items:stretch">
+    <div class="card">
+      <h3 style="font-size:1.4rem;margin-bottom:6px">Bonoja Experience Shop</h3>
+      <p style="color:var(--mute);margin-bottom:6px">Shop 12, Savar Bazar Road<br>Savar, Dhaka 1340, Bangladesh</p>
+      <p style="font-size:.84rem;color:var(--mute)">GPS: 23.8583° N, 90.2667° E</p>
+      <table class="hrs"><tr><td>Saturday – Thursday</td><td>10:00 AM – 8:00 PM</td></tr><tr><td>Friday</td><td>3:00 PM – 8:00 PM</td></tr></table>
+      <p style="font-size:.9rem;margin-bottom:4px">📞 +880 1XXX-XXXXXX</p>
+      <p style="font-size:.9rem;margin-bottom:18px">✉️ hello@bonoja.example</p>
+      <div class="cta"><a class="btn sm" href="https://www.google.com/maps/dir/?api=1&amp;destination=23.8583,90.2667" target="_blank" rel="noopener">Get directions</a><a class="btn sm ghost" href="https://www.google.com/maps/search/?api=1&amp;query=23.8583,90.2667" target="_blank" rel="noopener">Open in Google Maps</a></div>
+      <p style="font-size:.8rem;color:var(--mute);margin-top:14px">Shop pickup orders are usually ready within 2 hours. We will call you.</p>
+    </div>
+    <div class="mapw"><iframe src="https://www.google.com/maps?q=23.8583,90.2667&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map showing the Bonoja shop in Savar"></iframe></div>
+  </div>
+  <p class="note">The address, coordinates, hours and phone are placeholders for Savar. Replace them with your shop’s exact details. For the pin, copy the latitude and longitude from Google Maps.</p>
+</div></section>
+
+<section id="reviews"><div class="wrap">
+  <div class="eyebrow">Reviews</div>
+  <h2>Loved by real customers</h2>
+  <p class="lead">Sample reviews shown. Replace with your own verified customer feedback.</p>
+  <div class="grid g3" id="revlist">
+    <div class="card rev"><div class="stars">★★★★★</div><p>“Hair fall reduced a lot after the second month. No greasy smell and it washes out easily.”</p><small>Nusrat J. · Dhaka</small></div>
+    <div class="card rev"><div class="stars">★★★★★</div><p>“Finally an oil with a clean herbal smell. My dandruff has calmed down.”</p><small>Rakib H. · Chattogram</small></div>
+    <div class="card rev"><div class="stars">★★★★☆</div><p>“Lovely texture. A bit thick in winter, but warming the bottle in water fixes it.”</p><small>Tania A. · Sylhet</small></div>
+  </div>
+  <form class="rf" id="rf">
+    <h3 style="font-size:1.4rem">Write a review</h3>
+    <div class="rate" id="rate">
+      <input type="radio" name="r" id="s5" value="5"><label for="s5">★</label>
+      <input type="radio" name="r" id="s4" value="4"><label for="s4">★</label>
+      <input type="radio" name="r" id="s3" value="3"><label for="s3">★</label>
+      <input type="radio" name="r" id="s2" value="2"><label for="s2">★</label>
+      <input type="radio" name="r" id="s1" value="1"><label for="s1">★</label>
+    </div>
+    <input id="rn" placeholder="Your name" required>
+    <textarea id="rt" rows="3" placeholder="Share your experience" required></textarea>
+    <button class="btn" type="submit">Submit review</button>
+  </form>
+</div></section>
+
+<section id="faq" style="background:#f3ecda"><div class="wrap" style="max-width:780px">
+  <div class="eyebrow">FAQ</div>
+  <h2>Questions, answered</h2>
+  <br>
+  <details><summary>How often should I use it?</summary><p>Massage into the scalp 2–3 times a week. Leave on for at least 1 hour or overnight, then wash with a mild shampoo.</p></details>
+  <details><summary>How long until I see results?</summary><p>Most people notice less breakage and better shine in 4–6 weeks, and less hair fall in 8–12 weeks. Results vary.</p></details>
+  <details><summary>Is it safe for coloured or chemically treated hair?</summary><p>Yes. It contains no harsh chemicals. Do a patch test first.</p></details>
+  <details><summary>Why does the oil thicken or change colour?</summary><p>Coconut oil solidifies below about 24°C. Warm the bottle in lukewarm water. Natural herb batches may vary slightly in shade.</p></details>
+  <details><summary>How does the refillable wooden comb work?</summary><p>Unscrew the cap, pour in about 10 ml of Bonoja oil, and close it. As you comb, the oil seeps through fine channels in the teeth. Wash it with a damp cloth. Do not soak it.</p></details>
+  <details><summary>How should I store it?</summary><p>Keep away from direct sunlight, tightly closed. Best used within 12 months of the batch date.</p></details>
+  <details><summary>What is the money-back guarantee?</summary><p>Use Bonoja for 30 days. If you are not happy, contact us within 30 days of delivery with your order number and we will refund the product price. Delivery charges are not refunded.</p></details>
+  <details><summary>Which payment methods do you accept?</summary><p>bKash, Nagad, Rocket, cards (Visa and Mastercard) and cash on delivery.</p></details>
+  <details><summary>How do I get free delivery?</summary><p>Orders of ৳1,500 or more, and the Hair Care Bundle, ship free anywhere in Bangladesh. Shop pickup is always free.</p></details>
+</div></section>
+
+<section class="final"><div class="wrap">
+  <h2>Start your organic hair ritual today.</h2>
+  <p class="lead" style="margin:0 auto 28px">Launch prices end soon. Choose your size and feel the difference.</p>
+  <a href="#pricing" class="btn">Order now</a>
+</div></section>
+
+<footer class="ft"><div class="wrap">
+  <div class="fg">
+    <div><a href="#top" class="logo">Bonoja<span>.</span></a><p style="max-width:320px">Cold-pressed organic hair oil, made in small batches in Bangladesh and shipped worldwide.</p></div>
+    <div><h5>Shop</h5><a href="#pricing">Hair oil</a><a href="#comb">Wooden oil comb</a><a href="#pricing">Bundles</a></div>
+    <div><h5>Learn</h5><a href="#ingredients">Ingredients &amp; origins</a><a href="#process">How it’s made</a><a href="#faq">FAQ</a></div>
+    <div><h5>Contact</h5><span style="display:block;margin-bottom:8px">hello@bonoja.example</span><span style="display:block;margin-bottom:8px">+880 1XXX-XXXXXX</span><a href="#visit">Shop 12, Savar Bazar Road, Savar, Dhaka 1340</a></div>
+  </div>
+  <div class="fb"><span>© 2026 Bonoja Organics. All rights reserved.</span><span>Privacy · Terms · Refund policy</span><span>Statements have not been evaluated as medical advice.</span></div>
+</div></footer>
+
+<div class="ov" id="ov" onclick="closeCart()"></div>
+<aside class="drawer" id="dr">
+  <div class="dh"><h3>Your cart</h3><button onclick="closeCart()" aria-label="Close">×</button></div>
+  <div class="db" id="items"></div>
+  <div class="df" id="df">
+    <div class="opts">
+      <label><input type="radio" name="d" value="60" checked><span>Home<br>Dhaka ৳60</span></label>
+      <label><input type="radio" name="d" value="120"><span>Home<br>Outside ৳120</span></label>
+      <label><input type="radio" name="d" value="0"><span>Shop<br>pickup Free</span></label>
+    </div>
+    <input id="cn" placeholder="Name"><input id="cp" placeholder="Phone"><input id="ca" placeholder="Address (skip for shop pickup)">
+    <select id="pay" onchange="payUI()"><option value="cod">Cash on delivery</option><option value="bkash">bKash</option><option value="nagad">Nagad</option><option value="rocket">Rocket</option><option value="card">Card (Visa / Mastercard)</option></select>
+    <div class="hint" id="pinfo"></div><input id="tx" placeholder="Transaction ID (TrxID)" style="display:none">
+    <div class="row"><span>Subtotal</span><span id="st">৳0</span></div>
+    <div class="row"><span>Delivery</span><span id="dl">৳0</span></div>
+    <div class="hint" id="hint"></div>
+    <div class="row t"><span>Total</span><span id="tt">৳0</span></div>
+    <button class="btn" onclick="checkout()">Place order</button>
+  </div>
+</aside>
+<div class="mo" id="cf" onclick="if(event.target===this)this.classList.remove('on')"><div class="mbox" style="text-align:center;max-width:420px"><div class="okc">✓</div><h3>Order confirmed</h3><p>This is a demo page. We’ll get to you soon. Thank you</p><button class="btn" onclick="$('cf').classList.remove('on')">Close</button></div></div>
+<div class="mo" id="wm" onclick="if(event.target===this)closeWhy()"><div class="mbox" id="wb"></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+var P={p100:{n:"Starter 100 ml",p:349},p250:{n:"Family 250 ml",p:749,gift:"Free refillable wooden oil comb"},p750:{n:"Hair Care Bundle 3×250 ml",p:1999,free:1,gift:"Free refillable wooden oil comb"},pc:{n:"Refillable wooden oil comb",p:399},pF:{n:"Hair Fall Control 250 ml",p:749,gift:"Free refillable wooden oil comb"},pS:{n:"Scalp Care 250 ml",p:749,gift:"Free refillable wooden oil comb"},pD:{n:"Dry & Frizz Repair 250 ml",p:749,gift:"Free refillable wooden oil comb"}};
+var cart={},FREE=1500;
+var $=function(i){return document.getElementById(i)};
+var CUR={BDT:["৳",1],USD:["$",.0082],EUR:["€",.0076],GBP:["£",.0064]},cur="BDT";
+var tk=function(n){var c=CUR[cur];return cur=="BDT"?c[0]+n.toLocaleString("en-US"):c[0]+(n*c[1]).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2})};
+function setCur(c){cur=c;document.querySelectorAll(".m").forEach(function(e){e.textContent=tk(+e.dataset.v)});render()}
+function toast(m){var t=$("toast");t.textContent=m;t.classList.add("on");setTimeout(function(){t.classList.remove("on")},1800)}
+function add(id){cart[id]=(cart[id]||0)+1;render();toast("Added to cart")}
+function chg(id,d){cart[id]+=d;if(cart[id]<=0)delete cart[id];render()}
+function openCart(){$("dr").classList.add("on");$("ov").classList.add("on")}
+function closeCart(){$("dr").classList.remove("on");$("ov").classList.remove("on")}
+function ship(){return +document.querySelector('input[name=d]:checked').value}
+function render(){
+  var ids=Object.keys(cart),count=0,sub=0,free=false,h="";
+  ids.forEach(function(id){var q=cart[id],p=P[id];count+=q;sub+=q*p.p;if(p.free)free=true;
+    h+='<div class="item"><div><b>'+p.n+'</b>'+(p.gift?'<div class="hint">🎁 + '+p.gift+'</div>':'')+'<div class="q"><button onclick="chg(\''+id+'\',-1)">−</button>'+q+'<button onclick="chg(\''+id+'\',1)">+</button></div></div><b>'+tk(q*p.p)+'</b></div>'});
+  $("items").innerHTML=h||'<p style="color:var(--mute);margin-top:20px">Your cart is empty.</p>';
+  $("cc").textContent=count;
+  var d=ship(),isFree=sub>=FREE||free;
+  var dc=!ids.length?0:(isFree?0:d);
+  $("st").textContent=tk(sub);
+  $("dl").textContent=dc?tk(dc):(ids.length?"Free":"৳0");
+  $("tt").textContent=tk(sub+dc);
+  $("hint").textContent=ids.length&&!isFree&&d>0?"Add "+tk(FREE-sub)+" more for free delivery":(isFree&&ids.length?"🎉 You’ve unlocked free delivery":"");
+}
+document.querySelectorAll('input[name=d]').forEach(function(r){r.onchange=render});
+function checkout(){
+  if(!Object.keys(cart).length){toast("Your cart is empty");return}
+  if(!$("cn").value||!$("cp").value){toast("Please add your name and phone");return}
+  var pv=$("pay").value;if((pv=="bkash"||pv=="nagad"||pv=="rocket")&&!$("tx").value){toast("Please enter your TrxID");return}
+  cart={};render();closeCart();$("cf").classList.add("on")
+}
+$("rf").onsubmit=function(e){
+  e.preventDefault();
+  var r=document.querySelector('input[name=r]:checked'),n=r?+r.value:5;
+  var c=document.createElement("div");c.className="card rev";
+  var s=document.createElement("div");s.className="stars";s.textContent="★★★★★".slice(0,n)+"☆☆☆☆☆".slice(0,5-n);
+  var p=document.createElement("p");p.textContent="“"+$("rt").value+"”";
+  var m=document.createElement("small");m.textContent=$("rn").value+" · Just now";
+  c.append(s,p,m);$("revlist").prepend(c);this.reset();toast("Thanks for your review!")
+};
+// AI video: set a real file path here when you have one, e.g. "assets/hero.mp4"
+var VIDEO_SRC="";
+if(VIDEO_SRC){var v=$("hv");v.src=VIDEO_SRC;v.onloadeddata=function(){$("stage").classList.add("hasvideo")}}
+var W={
+coconut:{n:"Virgin coconut oil",pl:"Barishal & Patuakhali coastal belt",i:"Its lauric acid is small enough to penetrate the hair shaft, which helps reduce protein loss from washing and styling. It also gives the blend a light, stable base that carries the herbs.",r:"Bangladesh’s southern coast has deep alluvial soil, high humidity and steady sea breezes that coconut palms thrive in. Most nuts here come from smallholders who use few chemical inputs.",c:"Mature nuts are bought at the farm gate from partner growers, dehusked and sun-dried to copra within days, then cold-pressed at our unit.",u:"https://en.wikipedia.org/wiki/Coconut_oil"},
+amla:{n:"Amla (Indian gooseberry)",pl:"Rajshahi orchards",i:"Naturally rich in vitamin C and polyphenols. It is traditionally used to support scalp health and condition hair, and steeping it in oil draws out its fat-soluble compounds.",r:"The dry, sunny climate of the Rajshahi region suits fruit trees that need a distinct dry season, which concentrates the fruit’s potency.",c:"Fruits are picked fully ripe, sliced and shade-dried, then collected from orchard gates every fortnight in season.",u:"https://en.wikipedia.org/wiki/Phyllanthus_emblica"},
+bhringraj:{n:"Bhringraj (false daisy)",pl:"Sylhet & Moulvibazar hills",i:"A staple of Ayurvedic hair oils for centuries, traditionally used to support growth and reduce thinning. Slow infusion releases its active compounds.",r:"High rainfall, humid air and shaded hill terrain favour lush herb growth with little need for irrigation or chemical protection.",c:"Whole plants are cut by hand at flowering, shade-dried and picked up by our van within 48 hours.",u:"https://en.wikipedia.org/wiki/Eclipta_prostrata"},
+neem:{n:"Neem leaf",pl:"Chapainawabganj",i:"Naturally antimicrobial and clarifying. It is traditionally used to keep the scalp clean and to ease dandruff and itch.",r:"Neem is hardy and thrives in the hot, dry northwest, where mature trees grow in village groves without sprays.",c:"Fresh leaves are hand-plucked from village groves in the morning and delivered the same day for drying.",u:"https://en.wikipedia.org/wiki/Azadirachta_indica"},
+blackseed:{n:"Black seed (Kalonji)",pl:"Faridpur & Jashore",i:"Contains thymoquinone, studied for its antioxidant and soothing properties. Traditionally used to strengthen roots and add shine.",r:"Fertile, well-drained loam and a cool, dry winter season suit Nigella sativa, which is grown as a winter crop.",c:"Seeds are harvested once the pods dry in the field, winnowed and collected from partner farms before pressing.",u:"https://en.wikipedia.org/wiki/Nigella_sativa"},
+hibiscus:{n:"Hibiscus & fenugreek",pl:"Gazipur & Bogura",i:"Hibiscus adds slip and softness and is traditionally used for shine. Fenugreek seeds are rich in proteins and mucilage that coat strands and add body.",r:"Both areas are established herb-growing zones close to Dhaka, so petals and seeds reach us fresh with short transport.",c:"Petals are picked at dawn from hedgerow plantings. Fenugreek is collected after the seed pods dry.",u:"https://en.wikipedia.org/wiki/Fenugreek"}
+};
+function why(k){var d=W[k];$("wb").innerHTML='<button class="x" onclick="closeWhy()" aria-label="Close">×</button><div class="eyebrow">Why we chose it</div><h3>'+d.n+'</h3><div class="loc">📍 '+d.pl+'</div><h4>Why this ingredient</h4><p>'+d.i+'</p><h4>Why this region</h4><p>'+d.r+'</p><h4>How we collect it</h4><p>'+d.c+'</p><a class="wl" href="'+d.u+'" target="_blank" rel="noopener">Learn more about '+d.n+' ↗</a><p class="fine">Sourcing regions shown are illustrative. Replace them with your own suppliers and certificates.</p>';$("wm").classList.add("on")}
+function closeWhy(){$("wm").classList.remove("on");if(location.hash.indexOf("#why-")==0)history.replaceState(null,"",location.pathname+location.search)}
+document.querySelectorAll(".ing [data-k]").forEach(function(c){var a=document.createElement("a");a.className="wl";a.href="#why-"+c.dataset.k;a.textContent="Why this ingredient and place →";c.appendChild(a)});
+function fromHash(){var m=location.hash.match(/^#why-(\w+)$/);if(m&&W[m[1]])why(m[1])}
+window.addEventListener("hashchange",fromHash);fromHash();
+document.addEventListener("keydown",function(e){if(e.key=="Escape"){closeWhy();closeCart();$("cf").classList.remove("on")}});
+function view(s){$("vf").style.display=s=="f"?"":"none";$("vb").style.display=s=="b"?"":"none";$("tf").classList.toggle("on",s=="f");$("tb").classList.toggle("on",s=="b")}
+if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});document.querySelectorAll("section .card,.step,.v,details,.art").forEach(function(e){e.classList.add("rv");io.observe(e)})}
+var QZ=[
+{q:"What is your biggest hair concern?",w:2,o:[["Hair fall or thinning","fall"],["Dandruff or an itchy scalp","scalp"],["Dry, frizzy or rough hair","dry"]]},
+{q:"How does your scalp feel by midday?",w:1,o:[["Oily or flaky","scalp"],["Fairly normal","fall"],["Tight or dry","dry"]]},
+{q:"What do you notice most in the shower or on your brush?",w:1,o:[["Lots of loose hair","fall"],["White flakes","scalp"],["Split ends and breakage","dry"]]},
+{q:"How would you describe your hair?",w:1,o:[["Fine or thin","fall"],["Thick, with oily roots","scalp"],["Coarse, curly or colour-treated","dry"]]}
+],qi=0,qa=[];
+var FX={
+fall:{n:"Hair Fall Control",id:"pF",hero:"Bhringraj",ing:["Virgin coconut oil","Bhringraj","Amla","Black seed oil"],why:"You described hair fall or weak roots. Bhringraj and amla are traditionally used to strengthen roots and support thicker-looking hair."},
+scalp:{n:"Scalp Care",id:"pS",hero:"Neem",ing:["Virgin coconut oil","Neem","Fenugreek","Black seed oil"],why:"You described flakes, itch or an oily scalp. Neem is traditionally used to keep the scalp clean, and black seed helps calm it."},
+dry:{n:"Dry & Frizz Repair",id:"pD",hero:"Hibiscus",ing:["Extra-rich coconut oil","Hibiscus","Fenugreek","Amla"],why:"You described dry, frizzy or rough hair. Hibiscus and fenugreek add slip, softness and shine, on an extra-rich coconut base."}
+};
+function qrender(){
+  if(qi>=QZ.length){qresult();return}
+  var Q=QZ[qi];$("qp").style.width=(qi/QZ.length*100)+"%";$("qn").textContent="Question "+(qi+1)+" of "+QZ.length;
+  $("qb").innerHTML='<h3>'+Q.q+'</h3>'+Q.o.map(function(o,i){return '<button class="opt" onclick="qans('+i+')">'+o[0]+'</button>'}).join("")+(qi?'<button class="lnk" onclick="qback()">← Back</button>':'');
+}
+function qans(i){qa[qi]=i;qi++;qrender()}
+function qback(){qi--;qrender()}
+function qreset(){qi=0;qa=[];document.querySelectorAll(".fx").forEach(function(c){c.classList.remove("hl")});qrender()}
+function qresult(){
+  var sc={fall:0,scalp:0,dry:0},first=QZ[0].o[qa[0]][1];
+  QZ.forEach(function(Q,j){sc[Q.o[qa[j]][1]]+=Q.w});
+  var best=first;Object.keys(sc).forEach(function(k){if(sc[k]>sc[best])best=k});
+  var d=FX[best];
+  $("qp").style.width="100%";$("qn").textContent="Your match";
+  $("qb").innerHTML='<div class="res"><h3>'+d.n+'</h3><p style="color:var(--mute);font-size:.93rem">'+d.why+'</p><div class="chips" style="margin-top:12px">'+d.ing.map(function(x){return '<span'+(x==d.hero?' class="hero"':'')+'>'+x+'</span>'}).join("")+'</div><div class="pr"><b>'+'<span class="m" data-v="749">'+tk(749)+'</span></b> <small style="color:var(--mute)">· 250 ml · free wooden oil comb included</small></div><button class="btn" onclick="add(\''+d.id+'\');openCart()">Add to cart</button> <button class="lnk" onclick="qreset()">Retake quiz</button></div>';
+  document.querySelectorAll(".fx").forEach(function(c){c.classList.toggle("hl",c.id=="fx-"+best)});
+}
+var PAYINFO={cod:"Pay in cash when your order arrives, or at the shop for pickup.",bkash:"Send the total by bKash to 01XXX-XXXXXX, then enter the TrxID below.",nagad:"Send the total by Nagad to 01XXX-XXXXXX, then enter the TrxID below.",rocket:"Send the total by Rocket to 01XXX-XXXXXX, then enter the TrxID below.",card:"We will send a secure card payment link after confirming your order (demo)."};
+function payUI(){var v=$("pay").value;$("pinfo").textContent=PAYINFO[v];$("tx").style.display=(v=="bkash"||v=="nagad"||v=="rocket")?"":"none"}
+var PDF={lab:"JVBERi0xLjMKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgKG9wZW5zb3VyY2UpCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUiAvRjMgNCAwIFIKPj4KZW5kb2JqCjIgMCBvYmoKPDwKL0Jhc2VGb250IC9IZWx2ZXRpY2EgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0YxIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKMyAwIG9iago8PAovQmFzZUZvbnQgL0hlbHZldGljYS1Cb2xkIC9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nIC9OYW1lIC9GMiAvU3VidHlwZSAvVHlwZTEgL1R5cGUgL0ZvbnQKPj4KZW5kb2JqCjQgMCBvYmoKPDwKL0Jhc2VGb250IC9IZWx2ZXRpY2EtT2JsaXF1ZSAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjMgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iago1IDAgb2JqCjw8Ci9Db250ZW50cyA5IDAgUiAvTWVkaWFCb3ggWyAwIDAgNTk1LjI3NTYgODQxLjg4OTggXSAvUGFyZW50IDggMCBSIC9SZXNvdXJjZXMgPDwKL0ZvbnQgMSAwIFIgL1Byb2NTZXQgWyAvUERGIC9UZXh0IC9JbWFnZUIgL0ltYWdlQyAvSW1hZ2VJIF0KPj4gL1JvdGF0ZSAwIC9UcmFucyA8PAoKPj4gCiAgL1R5cGUgL1BhZ2UKPj4KZW5kb2JqCjYgMCBvYmoKPDwKL1BhZ2VNb2RlIC9Vc2VOb25lIC9QYWdlcyA4IDAgUiAvVHlwZSAvQ2F0YWxvZwo+PgplbmRvYmoKNyAwIG9iago8PAovQXV0aG9yIChhbm9ueW1vdXMpIC9DcmVhdGlvbkRhdGUgKEQ6MjAyNjExMjQxMDU0MDMrMDAnMDAnKSAvQ3JlYXRvciAoYW5vbnltb3VzKSAvS2V5d29yZHMgKCkgL01vZERhdGUgKEQ6MjAyNjExMjQxMDU0MDMrMDAnMDAnKSAvUHJvZHVjZXIgKFJlcG9ydExhYiBQREYgTGlicmFyeSAtIFwob3BlbnNvdXJjZVwpKSAKICAvU3ViamVjdCAodW5zcGVjaWZpZWQpIC9UaXRsZSAodW50aXRsZWQpIC9UcmFwcGVkIC9GYWxzZQo+PgplbmRvYmoKOCAwIG9iago8PAovQ291bnQgMSAvS2lkcyBbIDUgMCBSIF0gL1R5cGUgL1BhZ2VzCj4+CmVuZG9iago5IDAgb2JqCjw8Ci9GaWx0ZXIgWyAvQVNDSUk4NURlY29kZSAvRmxhdGVEZWNvZGUgXSAvTGVuZ3RoIDk4NQo+PgpzdHJlYW0KR2F0PSo+QW91YidSbkIzMzAzSVZcQ2M9X2EmTDc1TEwuRVNhJUROdDo+dVdJYmE+Ui9wRzpsLmRrRTRnK3NkQVVuKUBqUzN1QSVyYHIwT0kiNU1zVnI9JmlVTz1wVykuIl9ALGs1IilhVWBVYjFFUjU1TUEzWVokIWlsVyItazJtViY8MDVEVkQmR2g9LC5CTi0mQDpJJDUhU0AoLkZZUWxUanVIXzNDI2lpQUB1LW5lcy1QQihuT1hrKk0xRTVsUlY/cSlQXlRKM2pVIUtWMkJPNik5aT5rWVxANCkkYzZLKG86cjRwN08/OldZWWwjSEd1Wy4pQCU7QShsal1GcChmR1BgWlpRM25yPjtkQWspIzpqTGQ1Ok1mNGg8bjllWWhdckBDWGNeLC1kSVg4PUE1PSJJQSVRZFY5QyJXNiVhYlc8bVJoV3MscDFvdT87OSlfQksjOnIoZiEmL1YjLFQ6Mjg2MCJeLD9CdG86b143bFxNVVBLOTtPWGJnLW08Vls/KXAicVZOIyJeKXVORz02QiNqVEYkI19vZz5kYy9eMTM7cyRJQG8hRm80S1w3SiJFVVRjKSRBWkk8ZD5PTTk9aDEnM3JVRFQrPVZYTzcvR1dPLz1qOWY6bD1HKEdVImtWVSsjIWBcdDY4PihXOixHSGNSTmwxYWZWLGxoWjxhY1FbK1o5LzkiV1plUStNIy9kMEs9TyxUdV9JNCEpZTA0Z2k+MDZUMEdLI2VPWTMsQzRrUkEtXk4oOCd1PSYuZitEWUNzYXNYaDxVNlNya19zQmhrUkBnJitQSTJmW2c0RkdcOUk9R3BzLlg2Om5cQThlYk9hJzE9PjJtPihLNitYO0dsVms1QVlHa15DZ0RXXyhiamVwXFohOmk2JjswSF45R2pmSCFGQU5sUV9DTVpqSiwuVCQ0cm9iXUlIPzYlJVdKUSw3Ki5aLStuVzVUTmBaUjgvSGNSUC9TRDdrVzQ/PjpqKSNxLjJcOm9iI1dyUUxLLk9HX0xhXWhZQlxuUW5eQzE0T28zP3FuQDMjLHVFVGgiSlkmIi0zKDU1Y3NAQlUkZzkoMmFnSjlbclRPYmFLcSw8QnAmRmszImhtRHA0I0xOVnUkWldaWyYnJ3NPSSxkNStMXUZIKVJuXCxaIkc0UTw5RkotSkxUUGBFKjFmbFJpQzEzUzFXM25ddVhpXms1W2QhV109R2osYTxlWjRHZWlqKE0rI2BoIUZqLyxBM0FdazFIRFttZ1ZORWtxV2FPRFBKTztAKmJWSXFsRC0pR1VnMjVYZnMiNVFqclcuNGUpIz1+PmVuZHN0cmVhbQplbmRvYmoKeHJlZgowIDEwCjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwMDA2MSAwMDAwMCBuIAowMDAwMDAwMTEyIDAwMDAwIG4gCjAwMDAwMDAyMTkgMDAwMDAgbiAKMDAwMDAwMDMzMSAwMDAwMCBuIAowMDAwMDAwNDQ2IDAwMDAwIG4gCjAwMDAwMDA2NDkgMDAwMDAgbiAKMDAwMDAwMDcxNyAwMDAwMCBuIAowMDAwMDAwOTc4IDAwMDAwIG4gCjAwMDAwMDEwMzcgMDAwMDAgbiAKdHJhaWxlcgo8PAovSUQgCls8YTJiZGYzMTEzZThlZGUyMjEyOGE3OTJhNTE4MWYzN2M+PGEyYmRmMzExM2U4ZWRlMjIxMjhhNzkyYTUxODFmMzdjPl0KJSBSZXBvcnRMYWIgZ2VuZXJhdGVkIFBERiBkb2N1bWVudCAtLSBkaWdlc3QgKG9wZW5zb3VyY2UpCgovSW5mbyA3IDAgUgovUm9vdCA2IDAgUgovU2l6ZSAxMAo+PgpzdGFydHhyZWYKMjExMgolJUVPRgo=",org:"JVBERi0xLjMKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgKG9wZW5zb3VyY2UpCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUiAvRjMgNCAwIFIKPj4KZW5kb2JqCjIgMCBvYmoKPDwKL0Jhc2VGb250IC9IZWx2ZXRpY2EgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0YxIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKMyAwIG9iago8PAovQmFzZUZvbnQgL0hlbHZldGljYS1Cb2xkIC9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nIC9OYW1lIC9GMiAvU3VidHlwZSAvVHlwZTEgL1R5cGUgL0ZvbnQKPj4KZW5kb2JqCjQgMCBvYmoKPDwKL0Jhc2VGb250IC9IZWx2ZXRpY2EtT2JsaXF1ZSAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjMgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iago1IDAgb2JqCjw8Ci9Db250ZW50cyA5IDAgUiAvTWVkaWFCb3ggWyAwIDAgNTk1LjI3NTYgODQxLjg4OTggXSAvUGFyZW50IDggMCBSIC9SZXNvdXJjZXMgPDwKL0ZvbnQgMSAwIFIgL1Byb2NTZXQgWyAvUERGIC9UZXh0IC9JbWFnZUIgL0ltYWdlQyAvSW1hZ2VJIF0KPj4gL1JvdGF0ZSAwIC9UcmFucyA8PAoKPj4gCiAgL1R5cGUgL1BhZ2UKPj4KZW5kb2JqCjYgMCBvYmoKPDwKL1BhZ2VNb2RlIC9Vc2VOb25lIC9QYWdlcyA4IDAgUiAvVHlwZSAvQ2F0YWxvZwo+PgplbmRvYmoKNyAwIG9iago8PAovQXV0aG9yIChhbm9ueW1vdXMpIC9DcmVhdGlvbkRhdGUgKEQ6MjAyNjExMjQxMDU0MDMrMDAnMDAnKSAvQ3JlYXRvciAoYW5vbnltb3VzKSAvS2V5d29yZHMgKCkgL01vZERhdGUgKEQ6MjAyNjExMjQxMDU0MDMrMDAnMDAnKSAvUHJvZHVjZXIgKFJlcG9ydExhYiBQREYgTGlicmFyeSAtIFwob3BlbnNvdXJjZVwpKSAKICAvU3ViamVjdCAodW5zcGVjaWZpZWQpIC9UaXRsZSAodW50aXRsZWQpIC9UcmFwcGVkIC9GYWxzZQo+PgplbmRvYmoKOCAwIG9iago8PAovQ291bnQgMSAvS2lkcyBbIDUgMCBSIF0gL1R5cGUgL1BhZ2VzCj4+CmVuZG9iago5IDAgb2JqCjw8Ci9GaWx0ZXIgWyAvQVNDSUk4NURlY29kZSAvRmxhdGVEZWNvZGUgXSAvTGVuZ3RoIDg0Nwo+PgpzdHJlYW0KR2F0PWo/I1EyZCdTYylKLydjdSlCbSRbOCMtT2hIYypnNjhdIWM5UlBwUV9VaVgtKHJaUlBwJyVLdSZSOVQjMC1xN3UhPGhyaXBZSz5CP15namMxSV5pXV5GVC5zXlRhVmxqJSdUdE9bLUF1NWhJWTdeQD85ZE03cjxTOGVqOWxZV2sidUpBOyVjPjE+XjU7NEVKMjdSQFhdLXAscCVwbU5LKWdqJ15sXT8mLyQzLSJtL1RZX1YqRGdcKm5PYUYlQlVbSCwmcnI9STtyTjRwKzMjQl8ha2hsKFxrTDdDPXJTJiZKbVEuI09kK29YW3JOJF0iVStrPVZWUlYyZktwUDlhYSdAWjhDQCxkZW9sPiZeUC06O2AmXiRmNWhTLmc9NzM+Kk8wR1s8T21FU0chXFhIT0M/UUBpOUpxWV90Ni9mbV5tMSlzUkxIZFg1PUg5KkM8bUdiYkU/OEEwUmtlTVUvXDE3Kms3Ky8ibjAmZkc0W2c2RyE9PUdfMU4jY1BAOCtrcXVVM08yOjM0QGYwJVEhbnBjbzBtJTFIT1krdW5qWzA8PTwpdG0+RDk6PzEtXURZUUQ+RmheIz43aSFaRTBvIzQyImQhRGZXNFZqP2RNPTRgLT8lOiRjPTJeS2tZJD4wcTglUk9lblclLy5eSGxrZHBBdEYnY2xsSTFuNyl0PjhLPzNXXmIrJTpfZVc/M2xpWDBXSUY7ZENVKjxUIWU6J0x0VGhoUjRCL2JLbjVANV9dQidTLz43MExIR147QHElR1BBJT0uRHA/aTVYIilqYjFEImE3MTtjP3MpLytFOStCKChbNV11MFwxcC5aI0VpMz9tcF9bTVBGdHM5LkkiMVdQQiRjcjs8QjAvU21lUE8wSWNkKlZbcy1CKWRNbm4pZmlYX3QvUTgnbyg6bU9XKy5bRCFHOHUpOmEqNU1tanBtNyhUdXFMamM7Q2FNczRYWGRGQUx1ZkFwQ3R0ND9jLl1mSmFSRUluJkNxVGJwdDcvJDQqLiFWO0RtNGZga1s2NmdfYD4pOGxROFJJZXNKcFNkZFpQb0BmJ0xQVkM1PD5tX18qNmMyaCxMJHM0WjREJTxqal0qOEFKSGZLPSxRMThdJ0k/J2YpRFd+PmVuZHN0cmVhbQplbmRvYmoKeHJlZgowIDEwCjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwMDA2MSAwMDAwMCBuIAowMDAwMDAwMTEyIDAwMDAwIG4gCjAwMDAwMDAyMTkgMDAwMDAgbiAKMDAwMDAwMDMzMSAwMDAwMCBuIAowMDAwMDAwNDQ2IDAwMDAwIG4gCjAwMDAwMDA2NDkgMDAwMDAgbiAKMDAwMDAwMDcxNyAwMDAwMCBuIAowMDAwMDAwOTc4IDAwMDAwIG4gCjAwMDAwMDEwMzcgMDAwMDAgbiAKdHJhaWxlcgo8PAovSUQgCls8N2ZlMmZmNTg5NzNhZjUxM2E5ZTJiM2YzNGM5OGQzMzA+PDdmZTJmZjU4OTczYWY1MTNhOWUyYjNmMzRjOThkMzMwPl0KJSBSZXBvcnRMYWIgZ2VuZXJhdGVkIFBERiBkb2N1bWVudCAtLSBkaWdlc3QgKG9wZW5zb3VyY2UpCgovSW5mbyA3IDAgUgovUm9vdCA2IDAgUgovU2l6ZSAxMAo+PgpzdGFydHhyZWYKMTk3NAolJUVPRgo=",bat:"JVBERi0xLjMKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgKG9wZW5zb3VyY2UpCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUiAvRjMgNCAwIFIKPj4KZW5kb2JqCjIgMCBvYmoKPDwKL0Jhc2VGb250IC9IZWx2ZXRpY2EgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0YxIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKMyAwIG9iago8PAovQmFzZUZvbnQgL0hlbHZldGljYS1Cb2xkIC9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nIC9OYW1lIC9GMiAvU3VidHlwZSAvVHlwZTEgL1R5cGUgL0ZvbnQKPj4KZW5kb2JqCjQgMCBvYmoKPDwKL0Jhc2VGb250IC9IZWx2ZXRpY2EtT2JsaXF1ZSAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjMgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iago1IDAgb2JqCjw8Ci9Db250ZW50cyA5IDAgUiAvTWVkaWFCb3ggWyAwIDAgNTk1LjI3NTYgODQxLjg4OTggXSAvUGFyZW50IDggMCBSIC9SZXNvdXJjZXMgPDwKL0ZvbnQgMSAwIFIgL1Byb2NTZXQgWyAvUERGIC9UZXh0IC9JbWFnZUIgL0ltYWdlQyAvSW1hZ2VJIF0KPj4gL1JvdGF0ZSAwIC9UcmFucyA8PAoKPj4gCiAgL1R5cGUgL1BhZ2UKPj4KZW5kb2JqCjYgMCBvYmoKPDwKL1BhZ2VNb2RlIC9Vc2VOb25lIC9QYWdlcyA4IDAgUiAvVHlwZSAvQ2F0YWxvZwo+PgplbmRvYmoKNyAwIG9iago8PAovQXV0aG9yIChhbm9ueW1vdXMpIC9DcmVhdGlvbkRhdGUgKEQ6MjAyNjExMjQxMDU0MDMrMDAnMDAnKSAvQ3JlYXRvciAoYW5vbnltb3VzKSAvS2V5d29yZHMgKCkgL01vZERhdGUgKEQ6MjAyNjExMjQxMDU0MDMrMDAnMDAnKSAvUHJvZHVjZXIgKFJlcG9ydExhYiBQREYgTGlicmFyeSAtIFwob3BlbnNvdXJjZVwpKSAKICAvU3ViamVjdCAodW5zcGVjaWZpZWQpIC9UaXRsZSAodW50aXRsZWQpIC9UcmFwcGVkIC9GYWxzZQo+PgplbmRvYmoKOCAwIG9iago8PAovQ291bnQgMSAvS2lkcyBbIDUgMCBSIF0gL1R5cGUgL1BhZ2VzCj4+CmVuZG9iago5IDAgb2JqCjw8Ci9GaWx0ZXIgWyAvQVNDSUk4NURlY29kZSAvRmxhdGVEZWNvZGUgXSAvTGVuZ3RoIDk2MAo+PgpzdHJlYW0KR2F0PWo+Qj84ZiY7QiQ/Lyt0Xl5lLVpnVF5na2VSRDVUdFosV29cOSxIdHU3amwtVzBgO2RPUUNmZVBzYGouYmYkYzsoc0RoWmxgaTBidFw/Rideay5ZM0xuJSUnO2MhKSp1WWo5QjU8ak5qVysrYjZpTC9icnFoSm1uZikjbXFSQS1qQE87JCk3ZCdoWDhqMUt1Pi1ESU1gKTMqZjtEK05GKzJuW2dBcGJgIUFrYXEydUcycDM6bFtvNEUuVWFZUDFhPitiXEs9VSFrQjVmPG84Z11cbS08NVM/Ky9eOyhgMFo1QXNpaSFPKFdsalVwX1tqMDlWOUVbSSpUNyJsUCpnQkowZD5ZQGU8XS9WPj0jIS4tP3EiXVdBaj1WJmpqTGJSMjNiJms/OiE9Pj1SP0thLjdqPFUwU0w8LzgudVNBQDxNYG0vIiJRMSxFajhhVUgiPDBIUVg0PS9mOSpXPllyKlAiU3NLciQwXjM9Yyw1YFgvbWE8Vz9FIjc4ZFNUWUJlSl86Lz00R1w1ZWk8SkFSQy4/VVc3L2M2TUErdEFRLEJrKk1XTz9MVHBNPkc+bEA0U21HU01BVC1jKUIsKSEpITBKc0NzLFE0MUdbK2lxPWwmWVM9biMqRGIxJElTQXQsPFNnTilIK11CVFFVOCheK04zZy0mRkIjZzRqbHRuPylrLVdMRE5ZaC5OTEJqT0M4OC4/LDNmIz5uI1E+J2E4WlgyYCtnOlAzSER0MFYjLDhrJSs3RVdpa1JfP1VsdERkJW8pNl9dTWw4TiZFWGtdUDZHQXQ5J2IrXTdgIUpuUCFgcEBOcTBsQTYyTGVicSlqXGlbbUwyRDoraWpvbEVKMSFpam5sJSJrTDZnT0ZhX1wtJSgpJSlUXmEyQ3JuLFUsYmp0XjUvdCxzRS0uSkE2JTJVLVprS09oTCpYVFxRNWFYJ1hEdSFfXz5VdXNdUGBuI0NHQSREOChqb0JoY2duZC4uRmMkLzkwZEBKVl9gdGdjSlhbOUdgRTQzVFZHT2trTyFjMl1pNCNUJ21ZOG5TU0ZnRSowMz40W1hIYzltRyEnX14+W24sUSohSUpIVDBsWSllVHJPYzgqaGZySVsjcjZcTCdZQ3EkJHUuMy1RUnJLLW5eTGMmLy5cXD5ZO0VAaG0jbTQ8cjY9YyouPFtTPDNzNWUiZWZyPWknYlZZTHFeXG1FTGlzI2g5JEBGMGktZ08nMSRCdFczcllRKl4lOC1OPCUybmRFbEJARzNXMjdNK0RuZVo/NW5xLX4+ZW5kc3RyZWFtCmVuZG9iagp4cmVmCjAgMTAKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDYxIDAwMDAwIG4gCjAwMDAwMDAxMTIgMDAwMDAgbiAKMDAwMDAwMDIxOSAwMDAwMCBuIAowMDAwMDAwMzMxIDAwMDAwIG4gCjAwMDAwMDA0NDYgMDAwMDAgbiAKMDAwMDAwMDY0OSAwMDAwMCBuIAowMDAwMDAwNzE3IDAwMDAwIG4gCjAwMDAwMDA5NzggMDAwMDAgbiAKMDAwMDAwMTAzNyAwMDAwMCBuIAp0cmFpbGVyCjw8Ci9JRCAKWzw4YTcyM2QzNGE2ZDNiODQ5NTk1ZWEzMjg4ZGNiOWFmZD48OGE3MjNkMzRhNmQzYjg0OTU5NWVhMzI4OGRjYjlhZmQ+XQolIFJlcG9ydExhYiBnZW5lcmF0ZWQgUERGIGRvY3VtZW50IC0tIGRpZ2VzdCAob3BlbnNvdXJjZSkKCi9JbmZvIDcgMCBSCi9Sb290IDYgMCBSCi9TaXplIDEwCj4+CnN0YXJ0eHJlZgoyMDg3CiUlRU9GCg=="},PN={lab:"Lab-Test-Report-BN-2611-A-SAMPLE.pdf",org:"Organic-Input-Declaration-SAMPLE.pdf",bat:"Batch-Traceability-Sheet-BN-2611-A-SAMPLE.pdf"};
+function dl(k){var b=atob(PDF[k]),u=new Uint8Array(b.length);for(var i=0;i<b.length;i++)u[i]=b.charCodeAt(i);var a=document.createElement("a");a.href=URL.createObjectURL(new Blob([u],{type:"application/pdf"}));a.download=PN[k];document.body.appendChild(a);a.click();a.remove()}
+function lookup(){var v=$("bn").value.trim().toUpperCase(),r=$("bres");
+  if(v=="BN-2611-A"){r.className="bres ok";r.innerHTML='✓ <b>Batch BN-2611-A verified.</b> MFG 10 Nov 2026 · EXP 09 Nov 2027. Cold-pressed and infused at our unit. <a class="wl" href="#" onclick="dl(\'lab\');return false">Download the lab report</a>'}
+  else{r.className="bres no";r.textContent="Batch not found. Check the number on your bottle’s back label, or contact us."}}
+qrender();payUI();
+render();
+</script>
+</body>
+</html>
